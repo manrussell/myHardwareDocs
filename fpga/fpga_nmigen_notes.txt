@@ -1,0 +1,29 @@
+FPGA's:
+
+
+Win10:
+======
+    install symbiFlow
+    =================
+    i used wsl.
+    i installed ubuntu xxx
+
+    // https://symbiflow-examples.readthedocs.io/en/latest/getting-symbiflow.html#toolchain-installation
+    apt update -y
+    apt upgrade
+
+    extra: conda update -n base -c defaults conda
+
+    apt install -y git wget xz-utils
+
+
+
+
+
+liteX
+======
+https://github.com/enjoy-digital/litex
+
+
+
+https://www.youtube.com/watch?v=-xyAauPa__s

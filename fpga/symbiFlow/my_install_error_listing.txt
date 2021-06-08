@@ -1,0 +1,870 @@
+markr@andrewmcf-PC:/mnt/c/WINDOWS/system32$ apt update -y
+Reading package lists... Done
+E: Could not open lock file /var/lib/apt/lists/lock - open (13: Permission denied)
+E: Unable to lock directory /var/lib/apt/lists/
+W: Problem unlinking the file /var/cache/apt/pkgcache.bin - RemoveCaches (13: Permission denied)
+W: Problem unlinking the file /var/cache/apt/srcpkgcache.bin - RemoveCaches (13: Permission denied)
+markr@andrewmcf-PC:/mnt/c/WINDOWS/system32$ sudo apt update -y
+[sudo] password for markr:
+Get:1 http://security.ubuntu.com/ubuntu focal-security InRelease [109 kB]
+Hit:2 http://archive.ubuntu.com/ubuntu focal InRelease
+Get:3 http://archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]
+Get:4 http://archive.ubuntu.com/ubuntu focal-backports InRelease [101 kB]
+Get:5 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages [623 kB]
+Get:6 http://security.ubuntu.com/ubuntu focal-security/main Translation-en [127 kB]
+Get:7 http://security.ubuntu.com/ubuntu focal-security/main amd64 c-n-f Metadata [7464 B]
+Get:8 http://security.ubuntu.com/ubuntu focal-security/restricted amd64 Packages [183 kB]
+Get:9 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [947 kB]
+Get:10 http://security.ubuntu.com/ubuntu focal-security/restricted Translation-en [27.0 kB]
+Get:11 http://security.ubuntu.com/ubuntu focal-security/restricted amd64 c-n-f Metadata [396 B]
+Get:12 http://security.ubuntu.com/ubuntu focal-security/universe amd64 Packages [552 kB]
+Get:13 http://security.ubuntu.com/ubuntu focal-security/universe Translation-en [82.8 kB]
+Get:14 http://security.ubuntu.com/ubuntu focal-security/universe amd64 c-n-f Metadata [10.8 kB]
+Get:15 http://security.ubuntu.com/ubuntu focal-security/multiverse amd64 Packages [14.8 kB]
+Get:16 http://security.ubuntu.com/ubuntu focal-security/multiverse Translation-en [3160 B]
+Get:17 http://security.ubuntu.com/ubuntu focal-security/multiverse amd64 c-n-f Metadata [340 B]
+Get:18 http://archive.ubuntu.com/ubuntu focal-updates/main Translation-en [216 kB]
+Get:19 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 c-n-f Metadata [13.2 kB]
+Get:20 http://archive.ubuntu.com/ubuntu focal-updates/restricted amd64 Packages [207 kB]
+Get:21 http://archive.ubuntu.com/ubuntu focal-updates/restricted Translation-en [30.7 kB]
+Get:22 http://archive.ubuntu.com/ubuntu focal-updates/restricted amd64 c-n-f Metadata [440 B]
+Get:23 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages [760 kB]
+Get:24 http://archive.ubuntu.com/ubuntu focal-updates/universe Translation-en [163 kB]
+Get:25 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 c-n-f Metadata [17.2 kB]
+Get:26 http://archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 Packages [21.6 kB]
+Get:27 http://archive.ubuntu.com/ubuntu focal-updates/multiverse Translation-en [5508 B]
+Get:28 http://archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 c-n-f Metadata [600 B]
+Get:29 http://archive.ubuntu.com/ubuntu focal-backports/universe amd64 Packages [4032 B]
+Get:30 http://archive.ubuntu.com/ubuntu focal-backports/universe amd64 c-n-f Metadata [224 B]
+Fetched 4342 kB in 3s (1415 kB/s)
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+60 packages can be upgraded. Run 'apt list --upgradable' to see them.
+markr@andrewmcf-PC:/mnt/c/WINDOWS/system32$
+markr@andrewmcf-PC:/mnt/c/WINDOWS/system32$
+markr@andrewmcf-PC:/mnt/c/WINDOWS/system32$
+markr@andrewmcf-PC:/mnt/c/WINDOWS/system32$
+markr@andrewmcf-PC:/mnt/c/WINDOWS/system32$ sudo apt upgrade
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+Calculating upgrade... Done
+The following packages will be upgraded:
+  alsa-ucm-conf apt apt-utils bind9-dnsutils bind9-host bind9-libs cloud-init curl git git-man initramfs-tools
+  initramfs-tools-bin initramfs-tools-core isc-dhcp-client isc-dhcp-common landscape-common libapt-pkg6.0
+  libcurl3-gnutls libcurl4 libglib2.0-0 libglib2.0-bin libglib2.0-data libhogweed5 libnettle7 libnss-systemd
+  libpam-systemd libpci3 libprocps8 libpython3.8 libpython3.8-minimal libpython3.8-stdlib libseccomp2 libssl1.1
+  libsystemd0 libudev1 libzstd1 linux-libc-dev open-vm-tools openssh-client openssh-server openssh-sftp-server openssl
+  pciutils procps python3-distupgrade python3-twisted python3-twisted-bin python3-update-manager python3.8
+  python3.8-minimal screen sosreport systemd systemd-sysv systemd-timesyncd ubuntu-keyring
+  ubuntu-release-upgrader-core udev update-manager-core update-notifier-common
+60 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 32.8 MB of archives.
+After this operation, 428 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libnss-systemd amd64 245.4-4ubuntu3.6 [95.8 kB]
+Get:2 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 udev amd64 245.4-4ubuntu3.6 [1366 kB]
+Get:3 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libudev1 amd64 245.4-4ubuntu3.6 [77.1 kB]
+Get:4 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 systemd-sysv amd64 245.4-4ubuntu3.6 [10.3 kB]
+Get:5 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 systemd-timesyncd amd64 245.4-4ubuntu3.6 [28.1 kB]
+Get:6 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libpam-systemd amd64 245.4-4ubuntu3.6 [186 kB]
+Get:7 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libseccomp2 amd64 2.5.1-1ubuntu1~20.04.1 [42.9 kB]
+Get:8 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 systemd amd64 245.4-4ubuntu3.6 [3805 kB]
+Get:9 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libsystemd0 amd64 245.4-4ubuntu3.6 [269 kB]
+Get:10 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libzstd1 amd64 1.4.4+dfsg-3ubuntu0.1 [237 kB]
+Get:11 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libapt-pkg6.0 amd64 2.0.5 [834 kB]
+Get:12 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 apt amd64 2.0.5 [1290 kB]
+Get:13 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 apt-utils amd64 2.0.5 [213 kB]
+Get:14 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 ubuntu-keyring all 2020.02.11.4 [22.1 kB]
+Get:15 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libpython3.8 amd64 3.8.5-1~20.04.2 [1624 kB]
+Get:16 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libssl1.1 amd64 1.1.1f-1ubuntu2.3 [1320 kB]
+Get:17 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 python3.8 amd64 3.8.5-1~20.04.2 [373 kB]
+Get:18 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libpython3.8-stdlib amd64 3.8.5-1~20.04.2 [1671 kB]
+Get:19 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 python3.8-minimal amd64 3.8.5-1~20.04.2 [1899 kB]
+Get:20 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libpython3.8-minimal amd64 3.8.5-1~20.04.2 [715 kB]
+Get:21 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 ubuntu-release-upgrader-core all 1:20.04.31 [23.8 kB]
+Get:22 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 update-manager-core all 1:20.04.10.6 [11.3 kB]
+Get:23 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 python3-distupgrade all 1:20.04.31 [104 kB]
+Get:24 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 python3-update-manager all 1:20.04.10.6 [38.1 kB]
+Get:25 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 update-notifier-common all 3.192.30.6 [131 kB]
+Get:26 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libnettle7 amd64 3.5.1+really3.5.1-2ubuntu0.1 [115 kB]
+Get:27 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libhogweed5 amd64 3.5.1+really3.5.1-2ubuntu0.1 [138 kB]Get:28 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libprocps8 amd64 2:3.3.16-1ubuntu2.1 [33.1 kB]
+Get:29 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 procps amd64 2:3.3.16-1ubuntu2.1 [233 kB]
+Get:30 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 isc-dhcp-client amd64 4.4.1-2.1ubuntu5.20.04.1 [247 kB]Get:31 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 isc-dhcp-common amd64 4.4.1-2.1ubuntu5.20.04.1 [44.8 kB]
+Get:32 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libglib2.0-data all 2.64.6-1~ubuntu20.04.3 [5988 B]
+Get:33 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libglib2.0-bin amd64 2.64.6-1~ubuntu20.04.3 [73.0 kB]
+Get:34 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libglib2.0-0 amd64 2.64.6-1~ubuntu20.04.3 [1285 kB]
+Get:35 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 openssl amd64 1.1.1f-1ubuntu2.3 [620 kB]
+Get:36 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 bind9-dnsutils amd64 1:9.16.1-0ubuntu2.7 [134 kB]
+Get:37 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 bind9-libs amd64 1:9.16.1-0ubuntu2.7 [1114 kB]
+Get:38 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 bind9-host amd64 1:9.16.1-0ubuntu2.7 [43.0 kB]
+Get:39 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 pciutils amd64 1:3.6.4-1ubuntu0.20.04.1 [56.5 kB]
+Get:40 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libpci3 amd64 1:3.6.4-1ubuntu0.20.04.1 [26.9 kB]
+Get:41 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 openssh-sftp-server amd64 1:8.2p1-4ubuntu0.2 [51.5 kB]
+Get:42 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 openssh-server amd64 1:8.2p1-4ubuntu0.2 [377 kB]
+Get:43 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 git-man all 1:2.25.1-1ubuntu3.1 [884 kB]
+Get:44 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libcurl3-gnutls amd64 7.68.0-1ubuntu2.5 [232 kB]
+Get:45 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 git amd64 1:2.25.1-1ubuntu3.1 [4557 kB]
+Get:46 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 openssh-client amd64 1:8.2p1-4ubuntu0.2 [671 kB]
+Get:47 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 alsa-ucm-conf all 1.2.2-1ubuntu0.6 [25.8 kB]
+Get:48 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 curl amd64 7.68.0-1ubuntu2.5 [161 kB]
+Get:49 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libcurl4 amd64 7.68.0-1ubuntu2.5 [234 kB]
+Get:50 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 initramfs-tools all 0.136ubuntu6.4 [9216 B]
+Get:51 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 initramfs-tools-core all 0.136ubuntu6.4 [47.8 kB]
+Get:52 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 initramfs-tools-bin amd64 0.136ubuntu6.4 [13.6 kB]
+Get:53 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 python3-twisted-bin amd64 18.9.0-11ubuntu0.20.04.1 [11.1 kB]
+Get:54 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 python3-twisted all 18.9.0-11ubuntu0.20.04.1 [1931 kB]
+Get:55 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 landscape-common amd64 19.12-0ubuntu4.2 [86.4 kB]
+Get:56 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 linux-libc-dev amd64 5.4.0-72.80 [1115 kB]
+Get:57 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 screen amd64 4.8.0-1ubuntu0.1 [577 kB]
+Get:58 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 sosreport amd64 4.1-1ubuntu0.20.04.1 [245 kB]
+Get:59 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 cloud-init all 21.1-19-gbad84ad4-0ubuntu1~20.04.1 [452 kB]
+Get:60 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 open-vm-tools amd64 2:11.2.5-2ubuntu1~ubuntu20.04.1 [604 kB]
+Fetched 32.8 MB in 19s (1748 kB/s)
+Extracting templates from packages: 100%
+Preconfiguring packages ...
+(Reading database ... 36455 files and directories currently installed.)
+Preparing to unpack .../libnss-systemd_245.4-4ubuntu3.6_amd64.deb ...
+Unpacking libnss-systemd:amd64 (245.4-4ubuntu3.6) over (245.4-4ubuntu3.4) ...
+Preparing to unpack .../udev_245.4-4ubuntu3.6_amd64.deb ...
+Unpacking udev (245.4-4ubuntu3.6) over (245.4-4ubuntu3.4) ...
+Preparing to unpack .../libudev1_245.4-4ubuntu3.6_amd64.deb ...
+Unpacking libudev1:amd64 (245.4-4ubuntu3.6) over (245.4-4ubuntu3.4) ...
+Setting up libudev1:amd64 (245.4-4ubuntu3.6) ...
+(Reading database ... 36455 files and directories currently installed.)
+Preparing to unpack .../systemd-sysv_245.4-4ubuntu3.6_amd64.deb ...
+Unpacking systemd-sysv (245.4-4ubuntu3.6) over (245.4-4ubuntu3.4) ...
+Preparing to unpack .../systemd-timesyncd_245.4-4ubuntu3.6_amd64.deb ...
+Unpacking systemd-timesyncd (245.4-4ubuntu3.6) over (245.4-4ubuntu3.4) ...
+Preparing to unpack .../libpam-systemd_245.4-4ubuntu3.6_amd64.deb ...
+Unpacking libpam-systemd:amd64 (245.4-4ubuntu3.6) over (245.4-4ubuntu3.4) ...
+Preparing to unpack .../libseccomp2_2.5.1-1ubuntu1~20.04.1_amd64.deb ...
+Unpacking libseccomp2:amd64 (2.5.1-1ubuntu1~20.04.1) over (2.4.3-1ubuntu3.20.04.3) ...
+Setting up libseccomp2:amd64 (2.5.1-1ubuntu1~20.04.1) ...
+(Reading database ... 36455 files and directories currently installed.)
+Preparing to unpack .../systemd_245.4-4ubuntu3.6_amd64.deb ...
+Unpacking systemd (245.4-4ubuntu3.6) over (245.4-4ubuntu3.4) ...
+Preparing to unpack .../libsystemd0_245.4-4ubuntu3.6_amd64.deb ...
+Unpacking libsystemd0:amd64 (245.4-4ubuntu3.6) over (245.4-4ubuntu3.4) ...
+Setting up libsystemd0:amd64 (245.4-4ubuntu3.6) ...
+(Reading database ... 36455 files and directories currently installed.)
+Preparing to unpack .../libzstd1_1.4.4+dfsg-3ubuntu0.1_amd64.deb ...
+Unpacking libzstd1:amd64 (1.4.4+dfsg-3ubuntu0.1) over (1.4.4+dfsg-3) ...
+Setting up libzstd1:amd64 (1.4.4+dfsg-3ubuntu0.1) ...
+(Reading database ... 36455 files and directories currently installed.)
+Preparing to unpack .../libapt-pkg6.0_2.0.5_amd64.deb ...
+Unpacking libapt-pkg6.0:amd64 (2.0.5) over (2.0.4) ...
+Setting up libapt-pkg6.0:amd64 (2.0.5) ...
+(Reading database ... 36455 files and directories currently installed.)
+Preparing to unpack .../archives/apt_2.0.5_amd64.deb ...
+Unpacking apt (2.0.5) over (2.0.4) ...
+Setting up apt (2.0.5) ...
+(Reading database ... 36455 files and directories currently installed.)
+Preparing to unpack .../apt-utils_2.0.5_amd64.deb ...
+Unpacking apt-utils (2.0.5) over (2.0.4) ...
+Preparing to unpack .../ubuntu-keyring_2020.02.11.4_all.deb ...
+Unpacking ubuntu-keyring (2020.02.11.4) over (2020.02.11.2) ...
+Setting up ubuntu-keyring (2020.02.11.4) ...
+(Reading database ... 36455 files and directories currently installed.)
+Preparing to unpack .../00-libpython3.8_3.8.5-1~20.04.2_amd64.deb ...
+Unpacking libpython3.8:amd64 (3.8.5-1~20.04.2) over (3.8.5-1~20.04) ...
+Preparing to unpack .../01-libssl1.1_1.1.1f-1ubuntu2.3_amd64.deb ...
+Unpacking libssl1.1:amd64 (1.1.1f-1ubuntu2.3) over (1.1.1f-1ubuntu2.2) ...
+Preparing to unpack .../02-python3.8_3.8.5-1~20.04.2_amd64.deb ...
+Unpacking python3.8 (3.8.5-1~20.04.2) over (3.8.5-1~20.04) ...
+Preparing to unpack .../03-libpython3.8-stdlib_3.8.5-1~20.04.2_amd64.deb ...
+Unpacking libpython3.8-stdlib:amd64 (3.8.5-1~20.04.2) over (3.8.5-1~20.04) ...
+Preparing to unpack .../04-python3.8-minimal_3.8.5-1~20.04.2_amd64.deb ...
+Unpacking python3.8-minimal (3.8.5-1~20.04.2) over (3.8.5-1~20.04) ...
+Preparing to unpack .../05-libpython3.8-minimal_3.8.5-1~20.04.2_amd64.deb ...
+Unpacking libpython3.8-minimal:amd64 (3.8.5-1~20.04.2) over (3.8.5-1~20.04) ...
+Preparing to unpack .../06-ubuntu-release-upgrader-core_1%3a20.04.31_all.deb ...
+Unpacking ubuntu-release-upgrader-core (1:20.04.31) over (1:20.04.30) ...
+Preparing to unpack .../07-update-manager-core_1%3a20.04.10.6_all.deb ...
+Unpacking update-manager-core (1:20.04.10.6) over (1:20.04.10.5) ...
+Preparing to unpack .../08-python3-distupgrade_1%3a20.04.31_all.deb ...
+Unpacking python3-distupgrade (1:20.04.31) over (1:20.04.30) ...
+Preparing to unpack .../09-python3-update-manager_1%3a20.04.10.6_all.deb ...
+Unpacking python3-update-manager (1:20.04.10.6) over (1:20.04.10.5) ...
+Preparing to unpack .../10-update-notifier-common_3.192.30.6_all.deb ...
+Unpacking update-notifier-common (3.192.30.6) over (3.192.30.5) ...
+Preparing to unpack .../11-libnettle7_3.5.1+really3.5.1-2ubuntu0.1_amd64.deb ...
+Unpacking libnettle7:amd64 (3.5.1+really3.5.1-2ubuntu0.1) over (3.5.1+really3.5.1-2) ...
+Setting up libnettle7:amd64 (3.5.1+really3.5.1-2ubuntu0.1) ...
+(Reading database ... 36455 files and directories currently installed.)
+Preparing to unpack .../libhogweed5_3.5.1+really3.5.1-2ubuntu0.1_amd64.deb ...
+Unpacking libhogweed5:amd64 (3.5.1+really3.5.1-2ubuntu0.1) over (3.5.1+really3.5.1-2) ...
+Setting up libhogweed5:amd64 (3.5.1+really3.5.1-2ubuntu0.1) ...
+(Reading database ... 36455 files and directories currently installed.)
+Preparing to unpack .../00-libprocps8_2%3a3.3.16-1ubuntu2.1_amd64.deb ...
+Unpacking libprocps8:amd64 (2:3.3.16-1ubuntu2.1) over (2:3.3.16-1ubuntu2) ...
+Preparing to unpack .../01-procps_2%3a3.3.16-1ubuntu2.1_amd64.deb ...
+Unpacking procps (2:3.3.16-1ubuntu2.1) over (2:3.3.16-1ubuntu2) ...
+Preparing to unpack .../02-isc-dhcp-client_4.4.1-2.1ubuntu5.20.04.1_amd64.deb ...
+Unpacking isc-dhcp-client (4.4.1-2.1ubuntu5.20.04.1) over (4.4.1-2.1ubuntu5) ...
+Preparing to unpack .../03-isc-dhcp-common_4.4.1-2.1ubuntu5.20.04.1_amd64.deb ...
+Unpacking isc-dhcp-common (4.4.1-2.1ubuntu5.20.04.1) over (4.4.1-2.1ubuntu5) ...
+Preparing to unpack .../04-libglib2.0-data_2.64.6-1~ubuntu20.04.3_all.deb ...
+Unpacking libglib2.0-data (2.64.6-1~ubuntu20.04.3) over (2.64.6-1~ubuntu20.04.1) ...
+Preparing to unpack .../05-libglib2.0-bin_2.64.6-1~ubuntu20.04.3_amd64.deb ...
+Unpacking libglib2.0-bin (2.64.6-1~ubuntu20.04.3) over (2.64.6-1~ubuntu20.04.1) ...
+Preparing to unpack .../06-libglib2.0-0_2.64.6-1~ubuntu20.04.3_amd64.deb ...
+Unpacking libglib2.0-0:amd64 (2.64.6-1~ubuntu20.04.3) over (2.64.6-1~ubuntu20.04.1) ...
+Preparing to unpack .../07-openssl_1.1.1f-1ubuntu2.3_amd64.deb ...
+Unpacking openssl (1.1.1f-1ubuntu2.3) over (1.1.1f-1ubuntu2.2) ...
+Preparing to unpack .../08-bind9-dnsutils_1%3a9.16.1-0ubuntu2.7_amd64.deb ...
+Unpacking bind9-dnsutils (1:9.16.1-0ubuntu2.7) over (1:9.16.1-0ubuntu2.6) ...
+Preparing to unpack .../09-bind9-libs_1%3a9.16.1-0ubuntu2.7_amd64.deb ...
+Unpacking bind9-libs:amd64 (1:9.16.1-0ubuntu2.7) over (1:9.16.1-0ubuntu2.6) ...
+Preparing to unpack .../10-bind9-host_1%3a9.16.1-0ubuntu2.7_amd64.deb ...
+Unpacking bind9-host (1:9.16.1-0ubuntu2.7) over (1:9.16.1-0ubuntu2.6) ...
+Preparing to unpack .../11-pciutils_1%3a3.6.4-1ubuntu0.20.04.1_amd64.deb ...
+Unpacking pciutils (1:3.6.4-1ubuntu0.20.04.1) over (1:3.6.4-1) ...
+Preparing to unpack .../12-libpci3_1%3a3.6.4-1ubuntu0.20.04.1_amd64.deb ...
+Unpacking libpci3:amd64 (1:3.6.4-1ubuntu0.20.04.1) over (1:3.6.4-1) ...
+Preparing to unpack .../13-openssh-sftp-server_1%3a8.2p1-4ubuntu0.2_amd64.deb ...
+Unpacking openssh-sftp-server (1:8.2p1-4ubuntu0.2) over (1:8.2p1-4ubuntu0.1) ...
+Preparing to unpack .../14-openssh-server_1%3a8.2p1-4ubuntu0.2_amd64.deb ...
+Unpacking openssh-server (1:8.2p1-4ubuntu0.2) over (1:8.2p1-4ubuntu0.1) ...
+Preparing to unpack .../15-git-man_1%3a2.25.1-1ubuntu3.1_all.deb ...
+Unpacking git-man (1:2.25.1-1ubuntu3.1) over (1:2.25.1-1ubuntu3) ...
+Preparing to unpack .../16-libcurl3-gnutls_7.68.0-1ubuntu2.5_amd64.deb ...
+Unpacking libcurl3-gnutls:amd64 (7.68.0-1ubuntu2.5) over (7.68.0-1ubuntu2.4) ...
+Preparing to unpack .../17-git_1%3a2.25.1-1ubuntu3.1_amd64.deb ...
+Unpacking git (1:2.25.1-1ubuntu3.1) over (1:2.25.1-1ubuntu3) ...
+Preparing to unpack .../18-openssh-client_1%3a8.2p1-4ubuntu0.2_amd64.deb ...
+Unpacking openssh-client (1:8.2p1-4ubuntu0.2) over (1:8.2p1-4ubuntu0.1) ...
+Preparing to unpack .../19-alsa-ucm-conf_1.2.2-1ubuntu0.6_all.deb ...
+Unpacking alsa-ucm-conf (1.2.2-1ubuntu0.6) over (1.2.2-1ubuntu0.5) ...
+Preparing to unpack .../20-curl_7.68.0-1ubuntu2.5_amd64.deb ...
+Unpacking curl (7.68.0-1ubuntu2.5) over (7.68.0-1ubuntu2.4) ...
+Preparing to unpack .../21-libcurl4_7.68.0-1ubuntu2.5_amd64.deb ...
+Unpacking libcurl4:amd64 (7.68.0-1ubuntu2.5) over (7.68.0-1ubuntu2.4) ...
+Preparing to unpack .../22-initramfs-tools_0.136ubuntu6.4_all.deb ...
+Unpacking initramfs-tools (0.136ubuntu6.4) over (0.136ubuntu6.3) ...
+Preparing to unpack .../23-initramfs-tools-core_0.136ubuntu6.4_all.deb ...
+Unpacking initramfs-tools-core (0.136ubuntu6.4) over (0.136ubuntu6.3) ...
+Preparing to unpack .../24-initramfs-tools-bin_0.136ubuntu6.4_amd64.deb ...
+Unpacking initramfs-tools-bin (0.136ubuntu6.4) over (0.136ubuntu6.3) ...
+Preparing to unpack .../25-python3-twisted-bin_18.9.0-11ubuntu0.20.04.1_amd64.deb ...
+Unpacking python3-twisted-bin:amd64 (18.9.0-11ubuntu0.20.04.1) over (18.9.0-11) ...
+Preparing to unpack .../26-python3-twisted_18.9.0-11ubuntu0.20.04.1_all.deb ...
+Unpacking python3-twisted (18.9.0-11ubuntu0.20.04.1) over (18.9.0-11) ...
+Preparing to unpack .../27-landscape-common_19.12-0ubuntu4.2_amd64.deb ...
+Welcome to Ubuntu 20.04.2 LTS (GNU/Linux 4.4.0-19041-Microsoft x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+57 updates can be installed immediately.
+23 of these updates are security updates.
+To see these additional updates run: apt list --upgradable
+
+
+Unpacking landscape-common (19.12-0ubuntu4.2) over (19.12-0ubuntu4.1) ...
+Preparing to unpack .../28-linux-libc-dev_5.4.0-72.80_amd64.deb ...
+Unpacking linux-libc-dev:amd64 (5.4.0-72.80) over (5.4.0-65.73) ...
+Preparing to unpack .../29-screen_4.8.0-1ubuntu0.1_amd64.deb ...
+Unpacking screen (4.8.0-1ubuntu0.1) over (4.8.0-1) ...
+Preparing to unpack .../30-sosreport_4.1-1ubuntu0.20.04.1_amd64.deb ...
+Unpacking sosreport (4.1-1ubuntu0.20.04.1) over (4.0-1~ubuntu0.20.04.3) ...
+Preparing to unpack .../31-cloud-init_21.1-19-gbad84ad4-0ubuntu1~20.04.1_all.deb ...
+Unpacking cloud-init (21.1-19-gbad84ad4-0ubuntu1~20.04.1) over (20.4.1-0ubuntu1~20.04.1) ...
+Preparing to unpack .../32-open-vm-tools_2%3a11.2.5-2ubuntu1~ubuntu20.04.1_amd64.deb ...
+Unpacking open-vm-tools (2:11.2.5-2ubuntu1~ubuntu20.04.1) over (2:11.1.5-1~ubuntu20.04.2) ...
+Setting up apt-utils (2.0.5) ...
+Setting up alsa-ucm-conf (1.2.2-1ubuntu0.6) ...
+Setting up libglib2.0-0:amd64 (2.64.6-1~ubuntu20.04.3) ...
+Setting up libssl1.1:amd64 (1.1.1f-1ubuntu2.3) ...
+Setting up python3-twisted-bin:amd64 (18.9.0-11ubuntu0.20.04.1) ...
+Setting up linux-libc-dev:amd64 (5.4.0-72.80) ...
+Setting up isc-dhcp-client (4.4.1-2.1ubuntu5.20.04.1) ...
+Setting up screen (4.8.0-1ubuntu0.1) ...
+Setting up libcurl3-gnutls:amd64 (7.68.0-1ubuntu2.5) ...
+Setting up libglib2.0-data (2.64.6-1~ubuntu20.04.3) ...
+Setting up python3-twisted (18.9.0-11ubuntu0.20.04.1) ...
+Setting up udev (245.4-4ubuntu3.6) ...
+invoke-rc.d: could not determine current runlevel
+update-initramfs: deferring update (trigger activated)
+Setting up sosreport (4.1-1ubuntu0.20.04.1) ...
+Setting up libpci3:amd64 (1:3.6.4-1ubuntu0.20.04.1) ...
+Setting up libcurl4:amd64 (7.68.0-1ubuntu2.5) ...
+Setting up git-man (1:2.25.1-1ubuntu3.1) ...
+Setting up isc-dhcp-common (4.4.1-2.1ubuntu5.20.04.1) ...
+Setting up curl (7.68.0-1ubuntu2.5) ...
+Setting up openssl (1.1.1f-1ubuntu2.3) ...
+Setting up libprocps8:amd64 (2:3.3.16-1ubuntu2.1) ...
+Setting up initramfs-tools-bin (0.136ubuntu6.4) ...
+Setting up libpython3.8-minimal:amd64 (3.8.5-1~20.04.2) ...
+Setting up bind9-libs:amd64 (1:9.16.1-0ubuntu2.7) ...
+Setting up openssh-client (1:8.2p1-4ubuntu0.2) ...
+Setting up libglib2.0-bin (2.64.6-1~ubuntu20.04.3) ...
+Setting up landscape-common (19.12-0ubuntu4.2) ...
+Welcome to Ubuntu 20.04.2 LTS (GNU/Linux 4.4.0-19041-Microsoft x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Tue Apr 20 20:54:03 BST 2021
+
+  System load:    0.52      Users logged in:        0
+  Usage of /home: unknown   IPv4 address for eth1:  192.168.56.1
+  Memory usage:   65%       IPv4 address for eth2:  169.254.41.141
+  Swap usage:     0%        IPv4 address for wifi0: 192.168.1.73
+  Processes:      12
+
+
+57 updates can be installed immediately.
+23 of these updates are security updates.
+To see these additional updates run: apt list --upgradable
+
+
+*** System restart required ***
+Setting up git (1:2.25.1-1ubuntu3.1) ...
+Setting up pciutils (1:3.6.4-1ubuntu0.20.04.1) ...
+Setting up python3.8-minimal (3.8.5-1~20.04.2) ...
+Setting up open-vm-tools (2:11.2.5-2ubuntu1~ubuntu20.04.1) ...
+Installing new version of config file /etc/vmware-tools/tools.conf.example ...
+Installing new version of config file /etc/vmware-tools/vgauth.conf ...
+invoke-rc.d: could not determine current runlevel
+Setting up procps (2:3.3.16-1ubuntu2.1) ...
+Setting up libpython3.8-stdlib:amd64 (3.8.5-1~20.04.2) ...
+Setting up initramfs-tools-core (0.136ubuntu6.4) ...
+Setting up python3.8 (3.8.5-1~20.04.2) ...
+Setting up bind9-host (1:9.16.1-0ubuntu2.7) ...
+Setting up openssh-sftp-server (1:8.2p1-4ubuntu0.2) ...
+Setting up cloud-init (21.1-19-gbad84ad4-0ubuntu1~20.04.1) ...
+Setting up initramfs-tools (0.136ubuntu6.4) ...
+update-initramfs: deferring update (trigger activated)
+Setting up openssh-server (1:8.2p1-4ubuntu0.2) ...
+Creating SSH2 RSA key; this may take some time ...
+3072 SHA256:L0YR7XeCTG8rCUt/8O+nRU02mfziUip31Y9Y7tSPu3g root@andrewmcf-PC (RSA)
+Creating SSH2 ECDSA key; this may take some time ...
+256 SHA256:FGriyqSVLHlxoKWRu9RX6F+QfsfzqiE887G/6wRzBLA root@andrewmcf-PC (ECDSA)
+Creating SSH2 ED25519 key; this may take some time ...
+256 SHA256:ML7Yv5aBFKUJ7zAJ4uqmV2+qIoxSbluxrOP2+ccWzT0 root@andrewmcf-PC (ED25519)
+invoke-rc.d: could not determine current runlevel
+Setting up libpython3.8:amd64 (3.8.5-1~20.04.2) ...
+Setting up bind9-dnsutils (1:9.16.1-0ubuntu2.7) ...
+Setting up systemd (245.4-4ubuntu3.6) ...
+Setting up python3-distupgrade (1:20.04.31) ...
+Setting up systemd-timesyncd (245.4-4ubuntu3.6) ...
+Setting up ubuntu-release-upgrader-core (1:20.04.31) ...
+Setting up python3-update-manager (1:20.04.10.6) ...
+Setting up systemd-sysv (245.4-4ubuntu3.6) ...
+Setting up libnss-systemd:amd64 (245.4-4ubuntu3.6) ...
+Setting up update-manager-core (1:20.04.10.6) ...
+Setting up libpam-systemd:amd64 (245.4-4ubuntu3.6) ...
+Setting up update-notifier-common (3.192.30.6) ...
+Processing triggers for libc-bin (2.31-0ubuntu9.2) ...
+Processing triggers for rsyslog (8.2001.0-1ubuntu1.1) ...
+invoke-rc.d: could not determine current runlevel
+Processing triggers for ufw (0.36-6) ...
+Processing triggers for man-db (2.9.1-1) ...
+Processing triggers for dbus (1.12.16-2ubuntu2.1) ...
+Processing triggers for install-info (6.7.0.dfsg.2-5) ...
+Processing triggers for mime-support (3.64ubuntu1) ...
+Processing triggers for initramfs-tools (0.136ubuntu6.4) ...
+markr@andrewmcf-PC:/mnt/c/WINDOWS/system32$
+markr@andrewmcf-PC:/mnt/c/WINDOWS/system32$
+markr@andrewmcf-PC:/mnt/c/WINDOWS/system32$
+markr@andrewmcf-PC:/mnt/c/WINDOWS/system32$ apt install -y git wget xz-utils
+E: Could not open lock file /var/lib/dpkg/lock-frontend - open (13: Permission denied)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), are you root?
+markr@andrewmcf-PC:/mnt/c/WINDOWS/system32$ sudo su
+root@andrewmcf-PC:/mnt/c/WINDOWS/system32# apt install -y git wget xz-utils
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+wget is already the newest version (1.20.3-1ubuntu1).
+wget set to manually installed.
+git is already the newest version (1:2.25.1-1ubuntu3.1).
+git set to manually installed.
+xz-utils is already the newest version (5.2.4-1ubuntu1).
+xz-utils set to manually installed.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+root@andrewmcf-PC:/mnt/c/WINDOWS/system32# cd ../../..
+root@andrewmcf-PC:/mnt# pwd
+/mnt
+root@andrewmcf-PC:/mnt# ls
+c
+root@andrewmcf-PC:/mnt# cd c/
+root@andrewmcf-PC:/mnt/c# cd 00Mark/fpga/
+root@andrewmcf-PC:/mnt/c/00Mark/fpga# ls
+FPGA_fmsynth_ideas_001.pptx  FPGA_fmsynth_ideas_003.pptx  JESD204B-Survival-Guide.pdf  QMTECH_XC7A35T_DDR3_V4.zip
+FPGA_fmsynth_ideas_002.pptx  ISE                          QMTECH_XC7A35T_DDR3_V4       waveShareUSB3300
+root@andrewmcf-PC:/mnt/c/00Mark/fpga# mkdir symbiFlow
+root@andrewmcf-PC:/mnt/c/00Mark/fpga# cd symbiFlow/
+root@andrewmcf-PC:/mnt/c/00Mark/fpga/symbiFlow#
+root@andrewmcf-PC:/mnt/c/00Mark/fpga/symbiFlow#
+root@andrewmcf-PC:/mnt/c/00Mark/fpga/symbiFlow# ls
+root@andrewmcf-PC:/mnt/c/00Mark/fpga/symbiFlow#
+root@andrewmcf-PC:/mnt/c/00Mark/fpga/symbiFlow#
+root@andrewmcf-PC:/mnt/c/00Mark/fpga/symbiFlow# git clone https://github.com/SymbiFlow/symbiflow-examples
+Cloning into 'symbiflow-examples'...
+remote: Enumerating objects: 899, done.
+remote: Counting objects: 100% (61/61), done.
+remote: Compressing objects: 100% (48/48), done.
+remote: Total 899 (delta 26), reused 30 (delta 12), pack-reused 838
+Receiving objects: 100% (899/899), 27.98 MiB | 2.35 MiB/s, done.
+Resolving deltas: 100% (455/455), done.
+root@andrewmcf-PC:/mnt/c/00Mark/fpga/symbiFlow#
+root@andrewmcf-PC:/mnt/c/00Mark/fpga/symbiFlow#
+root@andrewmcf-PC:/mnt/c/00Mark/fpga/symbiFlow#
+root@andrewmcf-PC:/mnt/c/00Mark/fpga/symbiFlow# cd symbiflow-examples/
+root@andrewmcf-PC:/mnt/c/00Mark/fpga/symbiFlow/symbiflow-examples# ls
+LICENSE  README.rst  docs  environment.yml  eos-s3  requirements.txt  scripts  xc7
+root@andrewmcf-PC:/mnt/c/00Mark/fpga/symbiFlow/symbiflow-examples# explorer.exe .
+explorer.exe: command not found
+root@andrewmcf-PC:/mnt/c/00Mark/fpga/symbiFlow/symbiflow-examples# start .
+
+Command 'start' not found, did you mean:
+
+  command 'stat' from deb coreutils (8.30-3ubuntu2)
+  command 'rstart' from deb x11-session-utils (7.7+4)
+  command 'tart' from deb tart (3.10-1build1)
+  command 'startx' from deb xinit (1.4.1-0ubuntu2)
+
+Try: apt install <deb name>
+
+root@andrewmcf-PC:/mnt/c/00Mark/fpga/symbiFlow/symbiflow-examples#
+root@andrewmcf-PC:/mnt/c/00Mark/fpga/symbiFlow/symbiflow-examples#
+root@andrewmcf-PC:/mnt/c/00Mark/fpga/symbiFlow/symbiflow-examples#
+root@andrewmcf-PC:/mnt/c/00Mark/fpga/symbiFlow/symbiflow-examples# wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O conda_installer.sh
+--2021-04-20 20:58:45--  https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+Resolving repo.continuum.io (repo.continuum.io)... 104.18.201.79, 104.18.200.79, 2606:4700::6812:c84f, ...
+Connecting to repo.continuum.io (repo.continuum.io)|104.18.201.79|:443... connected.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh [following]
+--2021-04-20 20:58:46--  https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+Resolving repo.anaconda.com (repo.anaconda.com)... 104.16.130.3, 104.16.131.3, 2606:4700::6810:8303, ...
+Connecting to repo.anaconda.com (repo.anaconda.com)|104.16.130.3|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 94235922 (90M) [application/x-sh]
+Saving to: ‘conda_installer.sh’
+
+conda_installer.sh            100%[=================================================>]  89.87M  2.35MB/s    in 38s
+
+2021-04-20 20:59:24 (2.35 MB/s) - ‘conda_installer.sh’ saved [94235922/94235922]
+
+root@andrewmcf-PC:/mnt/c/00Mark/fpga/symbiFlow/symbiflow-examples#
+root@andrewmcf-PC:/mnt/c/00Mark/fpga/symbiFlow/symbiflow-examples#
+root@andrewmcf-PC:/mnt/c/00Mark/fpga/symbiFlow/symbiflow-examples#
+root@andrewmcf-PC:/mnt/c/00Mark/fpga/symbiFlow/symbiflow-examples#
+root@andrewmcf-PC:/mnt/c/00Mark/fpga/symbiFlow/symbiflow-examples# export INSTALL_DIR=~/opt/symbiflow
+root@andrewmcf-PC:/mnt/c/00Mark/fpga/symbiFlow/symbiflow-examples# export FPGA_FAM=xc7
+root@andrewmcf-PC:/mnt/c/00Mark/fpga/symbiFlow/symbiflow-examples# bash conda_installer.sh -u -b -p $INSTALL_DIR/$FPGA_FAM/conda;
+PREFIX=/root/opt/symbiflow/xc7/conda
+Unpacking payload ...
+Collecting package metadata (current_repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: /root/opt/symbiflow/xc7/conda
+
+  added / updated specs:
+    - _libgcc_mutex==0.1=main
+    - brotlipy==0.7.0=py38h27cfd23_1003
+    - ca-certificates==2020.10.14=0
+    - certifi==2020.6.20=pyhd3eb1b0_3
+    - cffi==1.14.3=py38h261ae71_2
+    - chardet==3.0.4=py38h06a4308_1003
+    - conda-package-handling==1.7.2=py38h03888b9_0
+    - conda==4.9.2=py38h06a4308_0
+    - cryptography==3.2.1=py38h3c74f83_1
+    - idna==2.10=py_0
+    - ld_impl_linux-64==2.33.1=h53a641e_7
+    - libedit==3.1.20191231=h14c3975_1
+    - libffi==3.3=he6710b0_2
+    - libgcc-ng==9.1.0=hdf63c60_0
+    - libstdcxx-ng==9.1.0=hdf63c60_0
+    - ncurses==6.2=he6710b0_1
+    - openssl==1.1.1h=h7b6447c_0
+    - pip==20.2.4=py38h06a4308_0
+    - pycosat==0.6.3=py38h7b6447c_1
+    - pycparser==2.20=py_2
+    - pyopenssl==19.1.0=pyhd3eb1b0_1
+    - pysocks==1.7.1=py38h06a4308_0
+    - python==3.8.5=h7579374_1
+    - readline==8.0=h7b6447c_0
+    - requests==2.24.0=py_0
+    - ruamel_yaml==0.15.87=py38h7b6447c_1
+    - setuptools==50.3.1=py38h06a4308_1
+    - six==1.15.0=py38h06a4308_0
+    - sqlite==3.33.0=h62c20be_0
+    - tk==8.6.10=hbc83047_0
+    - tqdm==4.51.0=pyhd3eb1b0_0
+    - urllib3==1.25.11=py_0
+    - wheel==0.35.1=pyhd3eb1b0_0
+    - xz==5.2.5=h7b6447c_0
+    - yaml==0.2.5=h7b6447c_0
+    - zlib==1.2.11=h7b6447c_3
+
+
+The following NEW packages will be INSTALLED:
+
+  _libgcc_mutex      pkgs/main/linux-64::_libgcc_mutex-0.1-main
+  brotlipy           pkgs/main/linux-64::brotlipy-0.7.0-py38h27cfd23_1003
+  ca-certificates    pkgs/main/linux-64::ca-certificates-2020.10.14-0
+  certifi            pkgs/main/noarch::certifi-2020.6.20-pyhd3eb1b0_3
+  cffi               pkgs/main/linux-64::cffi-1.14.3-py38h261ae71_2
+  chardet            pkgs/main/linux-64::chardet-3.0.4-py38h06a4308_1003
+  conda              pkgs/main/linux-64::conda-4.9.2-py38h06a4308_0
+  conda-package-han~ pkgs/main/linux-64::conda-package-handling-1.7.2-py38h03888b9_0
+  cryptography       pkgs/main/linux-64::cryptography-3.2.1-py38h3c74f83_1
+  idna               pkgs/main/noarch::idna-2.10-py_0
+  ld_impl_linux-64   pkgs/main/linux-64::ld_impl_linux-64-2.33.1-h53a641e_7
+  libedit            pkgs/main/linux-64::libedit-3.1.20191231-h14c3975_1
+  libffi             pkgs/main/linux-64::libffi-3.3-he6710b0_2
+  libgcc-ng          pkgs/main/linux-64::libgcc-ng-9.1.0-hdf63c60_0
+  libstdcxx-ng       pkgs/main/linux-64::libstdcxx-ng-9.1.0-hdf63c60_0
+  ncurses            pkgs/main/linux-64::ncurses-6.2-he6710b0_1
+  openssl            pkgs/main/linux-64::openssl-1.1.1h-h7b6447c_0
+  pip                pkgs/main/linux-64::pip-20.2.4-py38h06a4308_0
+  pycosat            pkgs/main/linux-64::pycosat-0.6.3-py38h7b6447c_1
+  pycparser          pkgs/main/noarch::pycparser-2.20-py_2
+  pyopenssl          pkgs/main/noarch::pyopenssl-19.1.0-pyhd3eb1b0_1
+  pysocks            pkgs/main/linux-64::pysocks-1.7.1-py38h06a4308_0
+  python             pkgs/main/linux-64::python-3.8.5-h7579374_1
+  readline           pkgs/main/linux-64::readline-8.0-h7b6447c_0
+  requests           pkgs/main/noarch::requests-2.24.0-py_0
+  ruamel_yaml        pkgs/main/linux-64::ruamel_yaml-0.15.87-py38h7b6447c_1
+  setuptools         pkgs/main/linux-64::setuptools-50.3.1-py38h06a4308_1
+  six                pkgs/main/linux-64::six-1.15.0-py38h06a4308_0
+  sqlite             pkgs/main/linux-64::sqlite-3.33.0-h62c20be_0
+  tk                 pkgs/main/linux-64::tk-8.6.10-hbc83047_0
+  tqdm               pkgs/main/noarch::tqdm-4.51.0-pyhd3eb1b0_0
+  urllib3            pkgs/main/noarch::urllib3-1.25.11-py_0
+  wheel              pkgs/main/noarch::wheel-0.35.1-pyhd3eb1b0_0
+  xz                 pkgs/main/linux-64::xz-5.2.5-h7b6447c_0
+  yaml               pkgs/main/linux-64::yaml-0.2.5-h7b6447c_0
+  zlib               pkgs/main/linux-64::zlib-1.2.11-h7b6447c_3
+
+
+Preparing transaction: done
+Executing transaction: done
+installation finished.
+root@andrewmcf-PC:/mnt/c/00Mark/fpga/symbiFlow/symbiflow-examples# source "$INSTALL_DIR/$FPGA_FAM/conda/etc/profile.d/conda.sh";
+root@andrewmcf-PC:/mnt/c/00Mark/fpga/symbiFlow/symbiflow-examples# conda env create -f $FPGA_FAM/environment.yml
+Collecting package metadata (repodata.json): done
+Solving environment: done
+
+
+==> WARNING: A newer version of conda exists. <==
+  current version: 4.9.2
+  latest version: 4.10.1
+
+Please update conda by running
+
+    $ conda update -n base -c defaults conda
+
+
+
+Downloading and Extracting Packages
+lxml-4.6.3           | 1.2 MB    | ############################################################################# | 100%
+intervaltree-3.1.0   | 26 KB     | ############################################################################# | 100%
+pip-21.0.1           | 1.8 MB    | ############################################################################# | 100%
+symbiflow-yosys-0.9_ | 10.7 MB   | ############################################################################# | 100%
+libxslt-1.1.34       | 432 KB    | ############################################################################# | 100%
+yosys-0.9_5266_g0fb4 | 10.8 MB   | ############################################################################# | 100%
+simplejson-3.17.2    | 102 KB    | ############################################################################# | 100%
+libusb-1.0.20        | 100 KB    | ############################################################################# | 100%
+openssl-1.1.1k       | 2.5 MB    | ############################################################################# | 100%
+krb5-1.18.2          | 1.3 MB    | ############################################################################# | 100%
+make-4.2.1           | 415 KB    | ############################################################################# | 100%
+openocd-0.10.0_1514_ | 1.7 MB    | ############################################################################# | 100%
+libedit-3.1.20210216 | 167 KB    | ############################################################################# | 100%
+symbiflow-yosys-plug | 6.3 MB    | ############################################################################# | 100%
+tbb-2020.3           | 1.1 MB    | ############################################################################# | 100%
+prjxray-db-0.0_248_g | 8.5 MB    | ############################################################################# | 100%
+icu-58.2             | 10.5 MB   | ############################################################################# | 100%
+certifi-2020.12.5    | 141 KB    | ############################################################################# | 100%
+expat-2.3.0          | 158 KB    | ############################################################################# | 100%
+libxml2-2.9.10       | 1.2 MB    | ############################################################################# | 100%
+python-3.7.10        | 45.2 MB   | ############################################################################# | 100%
+git-2.23.0           | 3.2 MB    | ############################################################################# | 100%
+sqlite-3.35.4        | 981 KB    | ############################################################################# | 100%
+libftdi-1.3          | 169 KB    | ############################################################################# | 100%
+wheel-0.36.2         | 33 KB     | ############################################################################# | 100%
+vtr-optimized-8.0.0_ | 69.5 MB   | ############################################################################# | 100%
+libssh2-1.9.0        | 269 KB    | ############################################################################# | 100%
+sortedcontainers-2.3 | 26 KB     | ############################################################################# | 100%
+readline-8.1         | 362 KB    | ############################################################################# | 100%
+ca-certificates-2021 | 114 KB    | ############################################################################# | 100%
+prjxray-tools-0.1_28 | 1.2 MB    | ############################################################################# | 100%
+setuptools-52.0.0    | 710 KB    | ############################################################################# | 100%
+libcurl-7.71.1       | 305 KB    | ############################################################################# | 100%
+pcre-8.44            | 212 KB    | ############################################################################# | 100%
+perl-5.26.2          | 10.5 MB   | ############################################################################# | 100%
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+Installing pip dependencies: - Ran pip subprocess with arguments:
+['/root/opt/symbiflow/xc7/conda/envs/xc7/bin/python', '-m', 'pip', 'install', '-U', '-r', '/mnt/c/00Mark/fpga/symbiFlow/symbiflow-examples/xc7/condaenv.axnqhk3h.requirements.txt']
+Pip subprocess output:
+Collecting prjxray
+  Cloning https://github.com/SymbiFlow/prjxray.git (to revision e25c20a8f158cc5e94eb62e3b74e16fc9d6c1d26) to /tmp/pip-install-_e7hqmc8/prjxray_44ba964a85b34a97b9591fd19d9e18e7
+Collecting xc-fasm
+  Cloning https://github.com/symbiflow/xc-fasm.git (to revision 14afc2bae24cbf6ee5e7d057a58b4cbd776358d0) to /tmp/pip-install-_e7hqmc8/xc-fasm_5bcf8cdadd33405c9385632b45aedfed
+Requirement already satisfied: intervaltree in /root/opt/symbiflow/xc7/conda/envs/xc7/lib/python3.7/site-packages (from -r file:requirements.txt (line 1)) (3.1.0)
+Collecting junit-xml
+  Downloading junit_xml-1.9-py2.py3-none-any.whl (7.1 kB)
+Collecting numpy
+  Downloading numpy-1.20.2-cp37-cp37m-manylinux2010_x86_64.whl (15.3 MB)
+Collecting openpyxl
+  Downloading openpyxl-3.0.7-py2.py3-none-any.whl (243 kB)
+Collecting ordered-set
+  Downloading ordered-set-4.0.2.tar.gz (10 kB)
+Collecting parse
+  Downloading parse-1.19.0.tar.gz (30 kB)
+Collecting progressbar2
+  Downloading progressbar2-3.53.1-py2.py3-none-any.whl (25 kB)
+Collecting pyjson5
+  Downloading pyjson5-1.5.0-cp37-cp37m-manylinux_2_24_x86_64.whl (232 kB)
+Collecting pytest
+  Downloading pytest-6.2.3-py3-none-any.whl (280 kB)
+Collecting pyyaml
+  Downloading PyYAML-5.4.1-cp37-cp37m-manylinux1_x86_64.whl (636 kB)
+Collecting scipy>=1.2.1
+  Downloading scipy-1.6.2-cp37-cp37m-manylinux1_x86_64.whl (27.4 MB)
+Requirement already satisfied: simplejson in /root/opt/symbiflow/xc7/conda/envs/xc7/lib/python3.7/site-packages (from -r file:requirements.txt (line 12)) (3.17.2)
+Collecting sympy
+  Downloading sympy-1.8-py3-none-any.whl (6.1 MB)
+Collecting textx
+  Downloading textX-2.3.0-py2.py3-none-any.whl (72 kB)
+Collecting yapf==0.24.0
+  Downloading yapf-0.24.0-py2.py3-none-any.whl (168 kB)
+Collecting python-constraint
+  Downloading python-constraint-1.4.0.tar.bz2 (18 kB)
+Collecting fasm
+  Downloading fasm-0.0.2.post70.tar.gz (80 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+    Preparing wheel metadata: started
+    Preparing wheel metadata: finished with status 'done'
+
+Pip subprocess error:
+  Running command git clone -q https://github.com/SymbiFlow/prjxray.git /tmp/pip-install-_e7hqmc8/prjxray_44ba964a85b34a97b9591fd19d9e18e7
+  fatal: unable to access 'https://github.com/SymbiFlow/prjxray.git/': Could not resolve host: github.com
+WARNING: Discarding git+https://github.com/SymbiFlow/prjxray.git@e25c20a8f158cc5e94eb62e3b74e16fc9d6c1d26#egg=prjxray. Command errored out with exit status 128: git clone -q https://github.com/SymbiFlow/prjxray.git /tmp/pip-install-_e7hqmc8/prjxray_44ba964a85b34a97b9591fd19d9e18e7 Check the logs for full command output.
+  Running command git clone -q https://github.com/symbiflow/xc-fasm.git /tmp/pip-install-_e7hqmc8/xc-fasm_5bcf8cdadd33405c9385632b45aedfed
+  fatal: unable to access 'https://github.com/symbiflow/xc-fasm.git/': Could not resolve host: github.com
+WARNING: Discarding git+https://github.com/symbiflow/xc-fasm.git@14afc2bae24cbf6ee5e7d057a58b4cbd776358d0#egg=xc-fasm. Command errored out with exit status 128: git clone -q https://github.com/symbiflow/xc-fasm.git /tmp/pip-install-_e7hqmc8/xc-fasm_5bcf8cdadd33405c9385632b45aedfed Check the logs for full command output.
+ERROR: Could not find a version that satisfies the requirement prjxray (unavailable)
+ERROR: No matching distribution found for prjxray (unavailable)
+
+failed
+
+CondaEnvException: Pip failed
+
+root@andrewmcf-PC:/mnt/c/00Mark/fpga/symbiFlow/symbiflow-examples#  conda update -n base -c defaults conda
+Collecting package metadata (current_repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: /root/opt/symbiflow/xc7/conda
+
+  added / updated specs:
+    - conda
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    certifi-2020.12.5          |   py38h06a4308_0         141 KB
+    cffi-1.14.5                |   py38h261ae71_0         224 KB
+    chardet-4.0.0              |py38h06a4308_1003         194 KB
+    conda-4.10.1               |   py38h06a4308_1         2.9 MB
+    conda-package-handling-1.7.3|   py38h27cfd23_1         884 KB
+    cryptography-3.4.7         |   py38hd23ed53_0         913 KB
+    idna-2.10                  |     pyhd3eb1b0_0          52 KB
+    pip-21.0.1                 |   py38h06a4308_0         1.8 MB
+    pyopenssl-20.0.1           |     pyhd3eb1b0_1          49 KB
+    requests-2.25.1            |     pyhd3eb1b0_0          52 KB
+    ruamel_yaml-0.15.100       |   py38h27cfd23_0         258 KB
+    setuptools-52.0.0          |   py38h06a4308_0         714 KB
+    tqdm-4.59.0                |     pyhd3eb1b0_1          93 KB
+    urllib3-1.26.4             |     pyhd3eb1b0_0         105 KB
+    ------------------------------------------------------------
+                                           Total:         8.2 MB
+
+The following packages will be REMOVED:
+
+  libedit-3.1.20191231-h14c3975_1
+
+The following packages will be UPDATED:
+
+  ca-certificates                              2020.10.14-0 --> 2021.4.13-h06a4308_1
+  certifi            pkgs/main/noarch::certifi-2020.6.20-p~ --> pkgs/main/linux-64::certifi-2020.12.5-py38h06a4308_0
+  cffi                                1.14.3-py38h261ae71_2 --> 1.14.5-py38h261ae71_0
+  chardet                           3.0.4-py38h06a4308_1003 --> 4.0.0-py38h06a4308_1003
+  conda                                4.9.2-py38h06a4308_0 --> 4.10.1-py38h06a4308_1
+  conda-package-han~                   1.7.2-py38h03888b9_0 --> 1.7.3-py38h27cfd23_1
+  cryptography                         3.2.1-py38h3c74f83_1 --> 3.4.7-py38hd23ed53_0
+  openssl                                 1.1.1h-h7b6447c_0 --> 1.1.1k-h27cfd23_0
+  pip                                 20.2.4-py38h06a4308_0 --> 21.0.1-py38h06a4308_0
+  pyopenssl                             19.1.0-pyhd3eb1b0_1 --> 20.0.1-pyhd3eb1b0_1
+  readline                                   8.0-h7b6447c_0 --> 8.1-h27cfd23_0
+  requests                                      2.24.0-py_0 --> 2.25.1-pyhd3eb1b0_0
+  ruamel_yaml                        0.15.87-py38h7b6447c_1 --> 0.15.100-py38h27cfd23_0
+  setuptools                          50.3.1-py38h06a4308_1 --> 52.0.0-py38h06a4308_0
+  sqlite                                  3.33.0-h62c20be_0 --> 3.35.4-hdfb4753_0
+  tqdm                                  4.51.0-pyhd3eb1b0_0 --> 4.59.0-pyhd3eb1b0_1
+  urllib3                                      1.25.11-py_0 --> 1.26.4-pyhd3eb1b0_0
+  wheel                                 0.35.1-pyhd3eb1b0_0 --> 0.36.2-pyhd3eb1b0_0
+
+The following packages will be DOWNGRADED:
+
+  idna                                            2.10-py_0 --> 2.10-pyhd3eb1b0_0
+
+
+Proceed ([y]/n)? y
+
+
+Downloading and Extracting Packages
+conda-package-handli | 884 KB    | ##################################################################################################################################### | 100%
+requests-2.25.1      | 52 KB     | ##################################################################################################################################### | 100%
+conda-4.10.1         | 2.9 MB    | ##################################################################################################################################### | 100%
+ruamel_yaml-0.15.100 | 258 KB    | ##################################################################################################################################### | 100%
+tqdm-4.59.0          | 93 KB     | ##################################################################################################################################### | 100%
+pyopenssl-20.0.1     | 49 KB     | ##################################################################################################################################### | 100%
+urllib3-1.26.4       | 105 KB    | ##################################################################################################################################### | 100%
+cryptography-3.4.7   | 913 KB    | ##################################################################################################################################### | 100%
+pip-21.0.1           | 1.8 MB    | ##################################################################################################################################### | 100%
+setuptools-52.0.0    | 714 KB    | ##################################################################################################################################### | 100%
+certifi-2020.12.5    | 141 KB    | ##################################################################################################################################### | 100%
+idna-2.10            | 52 KB     | ##################################################################################################################################### | 100%
+chardet-4.0.0        | 194 KB    | ##################################################################################################################################### | 100%
+cffi-1.14.5          | 224 KB    | ##################################################################################################################################### | 100%
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+root@andrewmcf-PC:/mnt/c/00Mark/fpga/symbiFlow/symbiflow-examples#
+root@andrewmcf-PC:/mnt/c/00Mark/fpga/symbiFlow/symbiflow-examples#
+root@andrewmcf-PC:/mnt/c/00Mark/fpga/symbiFlow/symbiflow-examples#
+root@andrewmcf-PC:/mnt/c/00Mark/fpga/symbiFlow/symbiflow-examples#
+root@andrewmcf-PC:/mnt/c/00Mark/fpga/symbiFlow/symbiflow-examples# bash conda_installer.sh -u -b -p $INSTALL_DIR/$FPGA_FAM/conda;
+PREFIX=/root/opt/symbiflow/xc7/conda
+Unpacking payload ...
+Collecting package metadata (current_repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: /root/opt/symbiflow/xc7/conda
+
+  added / updated specs:
+    - _libgcc_mutex==0.1=main
+    - brotlipy==0.7.0=py38h27cfd23_1003
+    - ca-certificates==2020.10.14=0
+    - certifi==2020.6.20=pyhd3eb1b0_3
+    - cffi==1.14.3=py38h261ae71_2
+    - chardet==3.0.4=py38h06a4308_1003
+    - conda-package-handling==1.7.2=py38h03888b9_0
+    - conda==4.9.2=py38h06a4308_0
+    - cryptography==3.2.1=py38h3c74f83_1
+    - idna==2.10=py_0
+    - ld_impl_linux-64==2.33.1=h53a641e_7
+    - libedit==3.1.20191231=h14c3975_1
+    - libffi==3.3=he6710b0_2
+    - libgcc-ng==9.1.0=hdf63c60_0
+    - libstdcxx-ng==9.1.0=hdf63c60_0
+    - ncurses==6.2=he6710b0_1
+    - openssl==1.1.1h=h7b6447c_0
+    - pip==20.2.4=py38h06a4308_0
+    - pycosat==0.6.3=py38h7b6447c_1
+    - pycparser==2.20=py_2
+    - pyopenssl==19.1.0=pyhd3eb1b0_1
+    - pysocks==1.7.1=py38h06a4308_0
+    - python==3.8.5=h7579374_1
+    - readline==8.0=h7b6447c_0
+    - requests==2.24.0=py_0
+    - ruamel_yaml==0.15.87=py38h7b6447c_1
+    - setuptools==50.3.1=py38h06a4308_1
+    - six==1.15.0=py38h06a4308_0
+    - sqlite==3.33.0=h62c20be_0
+    - tk==8.6.10=hbc83047_0
+    - tqdm==4.51.0=pyhd3eb1b0_0
+    - urllib3==1.25.11=py_0
+    - wheel==0.35.1=pyhd3eb1b0_0
+    - xz==5.2.5=h7b6447c_0
+    - yaml==0.2.5=h7b6447c_0
+    - zlib==1.2.11=h7b6447c_3
+
+
+The following NEW packages will be INSTALLED:
+
+  libedit            pkgs/main/linux-64::libedit-3.1.20191231-h14c3975_1
+
+The following packages will be SUPERSEDED by a higher-priority channel:
+
+  certifi            pkgs/main/linux-64::certifi-2020.12.5~ --> pkgs/main/noarch::certifi-2020.6.20-pyhd3eb1b0_3
+
+The following packages will be DOWNGRADED:
+
+  ca-certificates                      2021.4.13-h06a4308_1 --> 2020.10.14-0
+  cffi                                1.14.5-py38h261ae71_0 --> 1.14.3-py38h261ae71_2
+  chardet                           4.0.0-py38h06a4308_1003 --> 3.0.4-py38h06a4308_1003
+  conda                               4.10.1-py38h06a4308_1 --> 4.9.2-py38h06a4308_0
+  conda-package-han~                   1.7.3-py38h27cfd23_1 --> 1.7.2-py38h03888b9_0
+  cryptography                         3.4.7-py38hd23ed53_0 --> 3.2.1-py38h3c74f83_1
+  idna                                    2.10-pyhd3eb1b0_0 --> 2.10-py_0
+  openssl                                 1.1.1k-h27cfd23_0 --> 1.1.1h-h7b6447c_0
+  pip                                 21.0.1-py38h06a4308_0 --> 20.2.4-py38h06a4308_0
+  pyopenssl                             20.0.1-pyhd3eb1b0_1 --> 19.1.0-pyhd3eb1b0_1
+  readline                                   8.1-h27cfd23_0 --> 8.0-h7b6447c_0
+  requests                              2.25.1-pyhd3eb1b0_0 --> 2.24.0-py_0
+  ruamel_yaml                       0.15.100-py38h27cfd23_0 --> 0.15.87-py38h7b6447c_1
+  setuptools                          52.0.0-py38h06a4308_0 --> 50.3.1-py38h06a4308_1
+  sqlite                                  3.35.4-hdfb4753_0 --> 3.33.0-h62c20be_0
+  tqdm                                  4.59.0-pyhd3eb1b0_1 --> 4.51.0-pyhd3eb1b0_0
+  urllib3                               1.26.4-pyhd3eb1b0_0 --> 1.25.11-py_0
+  wheel                                 0.36.2-pyhd3eb1b0_0 --> 0.35.1-pyhd3eb1b0_0
+
+
+Preparing transaction: done
+Executing transaction: done
+installation finished.
+root@andrewmcf-PC:/mnt/c/00Mark/fpga/symbiFlow/symbiflow-examples# source "$INSTALL_DIR/$FPGA_FAM/conda/etc/profile.d/conda.sh";
+root@andrewmcf-PC:/mnt/c/00Mark/fpga/symbiFlow/symbiflow-examples# conda env create -f $FPGA_FAM/environment.yml
+
+CondaValueError: prefix already exists: /root/opt/symbiflow/xc7/conda/envs/xc7
+
+root@andrewmcf-PC:/mnt/c/00Mark/fpga/symbiFlow/symbiflow-examples#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+
+remove the old version ready for a new install ...
+    3  cd /root
+    4  rm -r symbiflow/
+

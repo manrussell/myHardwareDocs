@@ -1,0 +1,13 @@
+Pip subprocess error:
+  Running command git clone -q https://github.com/SymbiFlow/prjxray.git /tmp/pip-install-_e7hqmc8/prjxray_44ba964a85b34a97b9591fd19d9e18e7
+  fatal: unable to access 'https://github.com/SymbiFlow/prjxray.git/': Could not resolve host: github.com
+WARNING: Discarding git+https://github.com/SymbiFlow/prjxray.git@e25c20a8f158cc5e94eb62e3b74e16fc9d6c1d26#egg=prjxray. Command errored out with exit status 128: git clone -q https://github.com/SymbiFlow/prjxray.git /tmp/pip-install-_e7hqmc8/prjxray_44ba964a85b34a97b9591fd19d9e18e7 Check the logs for full command output.
+  Running command git clone -q https://github.com/symbiflow/xc-fasm.git /tmp/pip-install-_e7hqmc8/xc-fasm_5bcf8cdadd33405c9385632b45aedfed
+  fatal: unable to access 'https://github.com/symbiflow/xc-fasm.git/': Could not resolve host: github.com
+WARNING: Discarding git+https://github.com/symbiflow/xc-fasm.git@14afc2bae24cbf6ee5e7d057a58b4cbd776358d0#egg=xc-fasm. Command errored out with exit status 128: git clone -q https://github.com/symbiflow/xc-fasm.git /tmp/pip-install-_e7hqmc8/xc-fasm_5bcf8cdadd33405c9385632b45aedfed Check the logs for full command output.
+ERROR: Could not find a version that satisfies the requirement prjxray (unavailable)
+ERROR: No matching distribution found for prjxray (unavailable)
+
+failed
+
+CondaEnvException: Pip failed

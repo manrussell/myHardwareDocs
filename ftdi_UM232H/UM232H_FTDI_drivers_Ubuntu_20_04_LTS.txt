@@ -1,0 +1,124 @@
+UM232H_FTDI_drivers_Ubuntu_20_04_LTS
+====================================
+    I have a UM232H usb to serial driver.
+    The virtual com ports (VCP) are built into the kernel so do not need installing on linux, you can install other drivers (D2XX driver) but i don't care.
+        "Another FTDI USB driver, the D2XX driver, can also
+        be used with application software to directly access the FT232H on the UM232H through a DLL."
+
+    *)
+    plugin the device. i had to make sure it was set up -pins connected etc- as a tty or jtag for it to be recognized as a thing.
+
+    USB serial device (like that used for flashing MrCoffee ESP8266)
+        *)
+        $ lsusb
+        ...
+        Bus 003 Device 009: ID 0403:6014 Future Technology Devices International, Ltd FT232H Single HS USB-UART/FIFO IC
+        ...
+
+        *)
+        :~$ dmesg | grep FTDI
+        [ 1097.195108] usb 3-3.2: Manufacturer: FTDI
+        [ 1097.283102] usbserial: USB Serial support registered for FTDI USB Serial Device
+        [ 1097.283162] ftdi_sio 3-3.2:1.0: FTDI USB Serial Device converter detected
+        [ 1097.283457] usb 3-3.2: FTDI USB Serial Device converter now attached to ttyUSB0
+
+
+================================================
+Jtag flashing the QMTECH Xilinx arty-7 board... 
+================================================
+I found that sometimes the board was a bit sniffy when i t cam e to power sometimes my usb hub was fine to power it other times it wasn't.
+So, my fix was to plug in the power for thw QMTech board, have the UM232H plugged in (except for 3V3 wire), then as a final step plug in the 3V3 wire. 
+This worked today! ;)
+
+    *)
+    // check device plugged in ;)
+        $ lsusb
+        ...
+        Bus 003 Device 035: ID 0403:6014 Future Technology Devices International, Ltd FT232H Single HS USB-UART/FIFO IC
+        ...
+        notice the ID
+
+    *)
+    // see list of supported chips
+        $ xc3sprog -C
+        ...
+        ft232h              ftdi    1500000   0x0403:0x6014:
+        ...
+
+    *) //to flash the arty-7 goto where the bitstream is, here is symbiflow example  i built.  
+            $ cd git/symbiflow-arch-defs/build/xc/xc7/tests/counter/counter_arty/artix7-xc7a50t-arty-swbut-roi-virt-xc7a50t-arty-swbut-test
+        
+        //then flash
+            :~/git/symbiflow-arch-defs/build/xc/xc7/tests/counter/counter_arty/artix7-xc7a50t-arty-swbut-roi-virt-xc7a50t-arty-swbut-test$ xc3sprog -c ft232h top.bit -v
+            XC3SPROG (c) 2004-2011 xc3sprog project $Rev$ OS: Linux
+            Free software: If you contribute nothing, expect nothing!
+            Feedback on success/failure/enhancement requests:
+                http://sourceforge.net/mail/?group_id=170565 
+            Check Sourceforge for updates:
+                http://sourceforge.net/projects/xc3sprog/develop
+
+            Using built-in device list
+            Using built-in cable list
+            Cable ft232h type ftdi VID 0x0403 PID 0x6014 dbus data 00 enable 0b cbus data 00 data 00
+            Using Libftdi, Using JTAG frequency   1.500 MHz from undivided clock
+            JTAG chainpos: 0 Device IDCODE = 0x0362d093	Desc: XC7A35T
+            Created from NCD file: /tmp/tmpdgo15wk4;Generator=xc7frames2bit
+            Target device: xc7a35tcsg324-1
+            Created: 2021/05/03 19:46:26
+            Bitstream length: 17536096 bits
+            done. Programming time 11764.6 ms
+            USB transactions: Write 1087 read 14 retries 9
+
+
+        --> this flash the fpga and not the spi....
+    *)
+    // how to flash the spi chip.
+ToDo ...
+
+==================================================
+Error:
+======
+    --> Error: "JTAG Chain can not be found"
+    // The JTAG Chain not being found is concerning as this basically means it cannot detect the FPGA. In my case i had the pins the wrong way round! see Tdi/Tdo
+
+
+==================================================
+ Pin layouts
+ ===========
+ 
+    QMTECH ARTY board (notice that TDo/Tdi are reversed for the UM232H board)
+    ==========
+    3v3, gnd, clk out, in, TMS
+
+    UM232H jtag Pins
+    ================
+    MPSSE
+    (Multi-Protocol Synchronous Serial Engine). Using this MPSSE, the Multi-Purpose Serial/FIFO Controller can
+    be configured under software command, to have one of the MPSSE interfaces (SPI, I 2 C, and JTAG).
+
+    AD0 = TCK
+    AD1 = TDI
+    AD2 = TDO
+    AD3 = TMS
+
+    GND 
+    3V3
+
+==================================================
+xc3sprog install
+================
+    required for programming the fpga chip directly from the terminal using my UM232H, note why does it say rasbian ?
+        sudo apt install curl
+        curl
+        curl https://apt.matrix.one/doc/apt-key.gpg | sudo apt-key add -
+        echo "deb https://apt.matrix.one/raspbian $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/matrixlabs.list
+        sudo apt-get update
+        sudo apt-get upgrade
+        sudo apt install matrixio-xc3sprog --> don't think i needed this
+        sudo apt install xc3sprog
+        xc3sprog --h
+        ...
+        xc3sprog -c ft232h -j -v
+        xc3sprog -c ft232h top.bit -v
+
+==================================================

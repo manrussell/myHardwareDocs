@@ -1,0 +1,251 @@
+JT-51synth Tutorial:
+===================
+
+====================================================================================================================
+prerequisits:
+============
+    nmigen
+        pip3 install --user --upgrade nmigen
+
+    Vivado
+        // install however..
+
+        // put vivado on the path
+            $ source /tools/Xilinx/Vivado/2020.2/settings64.sh 
+
+        $ Vivado
+        // had error
+        "application-specific initialization failed: couldn't load file "librdi_commontasks.so": libtinfo.so.5: cannot open shared object file: No such file or directory "
+
+        // This is because Ubuntu 20.04 has ibtinfo.so.6 and not ibtinfo.so.5
+        // fix: make a link so that "...so.5" points to "...so.6"
+        // find .so in $ cd /lib/x86_64-linux-gnu/
+            $ sudo ln -s libtinfo.so.6 libtinfo.so.5
+
+        // to run... opens gui holds the terminal
+            $ vivado
+
+    FTDI drivers
+    ============
+        I hava a UM232H usb to serial driver.
+        The virtual com ports (VCP) are built into the kernel so do not need installing on linux, you can install other drivers or something but i don't care.
+
+        $ lsusb
+        ...
+        Bus 003 Device 009: ID 0403:6014 Future Technology Devices International, Ltd FT232H Single HS USB-UART/FIFO IC
+        ...
+
+        k:~$ dmesg | grep FTDI
+        [ 1097.195108] usb 3-3.2: Manufacturer: FTDI
+        [ 1097.283102] usbserial: USB Serial support registered for FTDI USB Serial Device
+        [ 1097.283162] ftdi_sio 3-3.2:1.0: FTDI USB Serial Device converter detected
+        [ 1097.283457] usb 3-3.2: FTDI USB Serial Device converter now attached to ttyUSB0
+
+        ls -la ttyUSB0
+
+
+    xc3sprog
+    ========
+    required for programming the fpga chip directly from the terminal using my UM232H, note why does it say rasbian ?
+        sudo apt install curl
+        curl
+        curl https://apt.matrix.one/doc/apt-key.gpg | sudo apt-key add -
+        echo "deb https://apt.matrix.one/raspbian $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/matrixlabs.list
+        sudo apt-get update
+        sudo apt-get upgrade
+        sudo apt install matrixio-xc3sprog --> don't think i needed this
+        sudo apt install xc3sprog
+        xc3sprog --h
+        ...
+        xc3sprog -c ft232h -j -v
+        xc3sprog -c ft232h top.bit -v
+
+
+
+    YOsys?
+        324  echo install YOsysHq
+        325  sudo apt-get install build-essential clang bison flex libreadline-dev gawk tcl-dev libffi-dev git graphviz xdot pkg-config python3 libboost-system-dev \
+        326  sudo apt-get install build-essential clang bison flex ibreadline-dev gawk tcl-dev libffi-dev git graphviz xdot pkg-config python3 libboost-system-dev libboost-python-dev libboost-filesystem-dev zlib1g-dev
+        327  sudo apt-get install build-essential clang bison flex libreadline-dev                      gawk tcl-dev libffi-dev git mercurial graphviz                        xdot pkg-config python python3 libftdi-dev gperf                      libboost-program-options-dev autoconf libgmp-dev \
+        328  sudo apt-get install build-essential clang bison flex libreadline-dev gawk tcl-dev libffi-dev git mercurial graphviz   xdot pkg-config python python3 libftdi-dev gperf libboost-program-options-dev autoconf libgmp-dev cmake
+        329  sudo apt update
+        330  sudo apt upgrade
+        331  cd ~/git/
+        332  
+        git clone https://github.com/YosysHQ/yosys.git yosys
+        cd yosys/
+        make -j8
+        sudo make install
+        yosys --version
+
+    lamdasoc?
+    git clone https://github.com/lambdaconcept/lambdasoc
+
+    
+
+    ### Optional ?
+    liteX
+    ======
+        https://github.com/enjoy-digital/litex
+
+    gtkwave
+    =======
+        sudo apt-get install python3-pip gtkwave
+
+    symboflow
+    =========
+        sudo git clone https://github.com/SymbiFlow/symbiflow-arch-defs.git
+
+====================================================================================================================
+JT-51synth: Hans's Github
+======================
+    *)
+        //Download repo
+            git clone https://github.com/hansfbaier/jt51-synth.git
+            cd jt51-synth/
+            git submodule init
+            git submodule update
+        ?)
+            git submodule update --init --recursive 
+
+        *)
+            // Possibly useful commands
+                cd myGits/jt51-synth/
+                git status
+                git clean -f -X -d
+            // if you do a git clean, you will have to re-initialise the environment
+
+
+    *)
+        // Initialise the environment
+            cd ~
+            cd git/myGits/jt51-synth/gateware/
+            ./initialize-python-environment.sh 
+
+    *)
+        // put vivado on the path
+            $ source /tools/Xilinx/Vivado/2020.2/settings64.sh 
+        // activate the python venv
+            $ source venv/bin/activate
+        // starts up venv()
+            (venv)...$ python3 jt51synth.py 
+        //
+            $ deactivate 
+
+
+
+
+====================================================================================================================
+python3 Notes:
+==============
+    $ pip install bcrypt
+
+    $ pip uninstall bcrypt
+
+    // to upgrade a package use the command '$PIP install --upgrade --user <package-name>'
+    // untested ...
+    $ pip install --upgrade --user numpy
+
+    // list all installed python packages
+    // https://pip.pypa.io/en/stable/cli/pip_list/
+    $ pip list
+
+    // list all pip-installed packages
+    $ pip freeze
+    
+    //How do I list Python packages installed in my virtualenv?
+    $ pip list --local
+
+    // list outdated
+    $ python -m pip list -o --format columns
+
+    e.g. from a venv you will get a shorted list than from a system wide one...
+        (env) k:~/pythonDev$ pip list
+        Package       Version
+        ------------- -------
+        cffi          1.14.5 
+        pip           20.0.2 
+        pkg-resources 0.0.0  
+        pycparser     2.20   
+        setuptools    44.0.0 
+        six           1.16.0 
+        (env) k:~/pythonDev$ pip freeze
+        cffi==1.14.5
+        pycparser==2.20
+        six==1.16.0
+        (env)
+
+A note on python3 env
+======================
+    https://realpython.com/python-virtual-environments-a-primer/
+    Despite the similarity in names (pyvenv vs pyenv), pyenv is different in that its focus is to help you switch between Python versions on a system-level as well as a project-level. While the purpose of pyvenv is to separate out modules, the purpose of pyenv is to separate Python versions.
+    $ curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
+    $ pyenv install 3.5.0   # Install new version
+    $ pyenv versions        # List installed versions
+    $ pyenv exec python -V  # Execute 'python -V' using pyenv version
+
+
+
+A note on python3 venv
+======================
+i believe that basically using a venv means that, while your using the venv that folder is added to the $PATH, so python looks in the venv/bin folder first before looking for system wide installs. e.g. try this "(env) $ echo $PATH"
+
+    // Create a new virtual environment inside the repo directory: called "env"
+    // creates folders for you
+    // bin: files that interact with the virtual environment
+    // include: C headers that compile the Python packagesS
+    // lib: a copy of the Python version along with a site-packages folder where each dependency is installed
+        $ python3 -m venv env   // this will create a venv called "env" Hans uses "venv" as a venv name...
+
+    // activate the python venv
+        $ source venv/bin/activate
+    
+    // now you see the venv name at the start of the command line, so you know what venv you are in.
+        (venv)...$
+
+    // install packages to use
+        (venv)$ pip install Django==1.9
+
+    // deactivate venv.
+        (venv)...$ deactivate
+
+====================================================================================================================
+Git Notes:
+====================
+    *)
+    git submodule update --init --recursive 
+
+    *)
+    // clean ... more info on options
+        git clean -f -X -d
+
+    *)
+    // todo git squash
+
+    *)
+    
+
+
+====================================================================================================================
+Things i want to try
+====================
+
+    *)
+    Make my own repo with venv etc
+        --done and made Notes
+
+    *)
+    Git submodules tutorial
+
+    *)
+    just make anything in nmigen
+
+    *)
+    simulate your thing
+
+    *)
+    make a blinky in nmigen for the Hw board.
+
+    *)
+    fork Hans's repo
+

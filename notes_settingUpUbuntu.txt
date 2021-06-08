@@ -1,0 +1,174 @@
+
+TP-link T2U wifi drivers
+========================
+    *) check the chipset it is a rtl8812au
+    *)
+    https://askubuntu.com/questions/1149117/tp-link-ac600-archer-t2u-nano-driver-for-ubuntu-18-04
+    https://forums.linuxmint.com/viewtopic.php?t=307023
+
+    sudo apt install git build-essential dkms
+    git clone https://github.com/aircrack-ng/rtl8812au.git
+    cd rtl8812au
+    //sudo ./dkms-install.sh --MKR er no 
+    sudo make dkms_install
+
+    There were some other instruction on the aircrack websiter.
+
+    Worked after a restart. 
+    Also ended up using USB tethering on my phone.
+    Aircrack is some
+
+
+FTDI drivers
+============
+    I hava a UM232H usb to serial driver.
+    The virtual com ports (VCP) are built into the kernal so do not need installing on linux, you can install other drivers or something but i don't care.
+
+    $ lsusb
+    ...
+    Bus 003 Device 009: ID 0403:6014 Future Technology Devices International, Ltd FT232H Single HS USB-UART/FIFO IC
+    ...
+
+    :~$ dmesg | grep FTDI
+    [ 1097.195108] usb 3-3.2: Manufacturer: FTDI
+    [ 1097.283102] usbserial: USB Serial support registered for FTDI USB Serial Device
+    [ 1097.283162] ftdi_sio 3-3.2:1.0: FTDI USB Serial Device converter detected
+    [ 1097.283457] usb 3-3.2: FTDI USB Serial Device converter now attached to ttyUSB0
+
+Thunderbird
+========
+was easy just needed gmail account n password, go to new -> existing email ..
+
+soundConverter
+=============
+good for converting sound formats.
+
+
+xc3sprog
+========
+required for programming the fpga chip directly from the terminal using my UM232H
+    sudo apt install curl
+    curl
+    curl https://apt.matrix.one/doc/apt-key.gpg | sudo apt-key add -
+    echo "deb https://apt.matrix.one/raspbian $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/matrixlabs.list
+    sudo apt-get update
+    sudo apt-get upgrade
+    sudo apt install matrixio-xc3sprog --> don't think i needed this
+    sudo apt install xc3sprog
+
+
+
+git/Github
+==========
+    sudo apt install git-all
+    git config --global user.email "---@---.com"
+    git config --list --show-origin
+
+*)
+generated a ssh-key add to github
+
+*)
+then from the http site get the ssh
+$ git clone git@github.com:manrussell/manrussell-stm8_mcli.git
+
+*)
+ssh -T git@github.com
+
+*)
+ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+Pinta
+=====
+image editor bit like MS Paint, a bit crashy at times
+
+
+
+Vivado
+======
+download installer for Xilinx, here version "Xilinx_Unified_2020.2_1118_1232_Lin64.bin"
+$ chmod +x Xilinx_Unified_2020.2_1118_1232_Lin64.bin 
+$ ls -a
+$ sudo ./Xilinx_Unified_2020.2_1118_1232_Lin64.bin
+
+    // put vivado on the path
+    $ source /tools/Xilinx/Vivado/2020.2/settings64.sh 
+    $ vivado&
+
+symboflow
+=========
+sudo git clone https://github.com/SymbiFlow/symbiflow-arch-defs.git
+
+
+
+VLC/MPV
+=======
+well both didn't want an install today
+
+
+grub-customizer
+===============
+Sorts out the 
+    sudo add-apt-repository ppa:danielrichter2007/grub-customizer 
+    sudo apt update
+    sudo apt install grub-customizer
+
+
+Vivado
+======
+check dates old one is wrong...
+   40  cd Downloads/
+   41  ls
+   42  rm '#Xilinx_Unified_2020.2_1118_1232_Lin64.bin#' 
+   43  ls
+   44  sudo ./Xilinx_Unified_2020.2_1118_1232_Lin64.bin
+   45  ls -a
+   46  chmod +x Xilinx_Vivado_SDK_2017.1_0415_1_Lin64.bin
+   47  ls -a
+   48  chmod +x Xilinx_Unified_2020.2_1118_1232_Lin64.bin 
+   49  ls -a
+   50  sudo ./Xilinx_Unified_2020.2_1118_1232_Lin64.bin
+   51  sudo shutdown now
+
+
+  250  vivado
+  251  ./tools/Xilinx/Vivado/2020.2/bin/vivado
+  252  sudo ./tools/Xilinx/Vivado/2020.2/bin/vivado
+  253  cd tools/Xilinx/Vivado/2020.2
+  254  cd ./tools/Xilinx/Vivado/2020.2
+  255  cd /tools/Xilinx/Vivado/2020.2
+  256  /tools/Xilinx/Vivado/2020.2/bin/vivado
+  257  ls
+  258  man source
+  259  settings64.sh
+  260  ls
+  261  source settings64.sh
+  262  vivado
+  263  sudo ./Xilinx_Unified_2020.2_1118_1232_Lin64.bin
+  264  sudo ~/Downloads/Xilinx_Unified_2020.2_1118_1232_Lin64.bin
+
+CopyQ
+=====
+    copy buffer history
+
+Tracktion, audio sequencer
+=========
+    https://www.tracktion.com/products/waveform-free
+
+    i put vst's into /usr/lib/vst
+
+
+KiCad
+=====
+    snap package
+
+====
+
+  91  sudo apt install inxi
+   92  inxi -SMA
+   93  sudo alsa force-reload
+   94  ffmpeg --version
+   95  sudo snap connect audacity:alsa
+   171  sudo apt install sigrok-firmware-fx2lafw
+
+===
+ 441  sudo add-apt-repository ppa:libretro/stable && sudo apt-get update && sudo apt-get install retroarch*
