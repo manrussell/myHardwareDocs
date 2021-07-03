@@ -3,7 +3,7 @@ JT-51synth Tutorial:
 
 ====================================================================================================================
 prerequisits:
-============
+=============
     nmigen
         pip3 install --user --upgrade nmigen
 
@@ -11,7 +11,7 @@ prerequisits:
         // install however..
 
         // put vivado on the path
-            $ source /tools/Xilinx/Vivado/2020.2/settings64.sh 
+            $ source /tools/Xilinx/Vivado/2020.2/settings64.sh
 
         $ Vivado
         // had error
@@ -71,7 +71,7 @@ prerequisits:
         329  sudo apt update
         330  sudo apt upgrade
         331  cd ~/git/
-        332  
+        332
         git clone https://github.com/YosysHQ/yosys.git yosys
         cd yosys/
         make -j8
@@ -81,7 +81,7 @@ prerequisits:
     lamdasoc?
     git clone https://github.com/lambdaconcept/lambdasoc
 
-    
+
 
     ### Optional ?
     liteX
@@ -96,9 +96,13 @@ prerequisits:
     =========
         sudo git clone https://github.com/SymbiFlow/symbiflow-arch-defs.git
 
+    verilator
+    =========
+        $ sudo apt install verilator
+
 ====================================================================================================================
 JT-51synth: Hans's Github
-======================
+=========================
     *)
         //Download repo
             git clone https://github.com/hansfbaier/jt51-synth.git
@@ -106,7 +110,7 @@ JT-51synth: Hans's Github
             git submodule init
             git submodule update
         ?)
-            git submodule update --init --recursive 
+            git submodule update --init --recursive
 
         *)
             // Possibly useful commands
@@ -120,17 +124,17 @@ JT-51synth: Hans's Github
         // Initialise the environment
             cd ~
             cd git/myGits/jt51-synth/gateware/
-            ./initialize-python-environment.sh 
+            ./initialize-python-environment.sh
 
     *)
         // put vivado on the path
-            $ source /tools/Xilinx/Vivado/2020.2/settings64.sh 
+            $ source /tools/Xilinx/Vivado/2020.2/settings64.sh
         // activate the python venv
             $ source venv/bin/activate
         // starts up venv()
-            (venv)...$ python3 jt51synth.py 
+            (venv)...$ python3 jt51synth.py
         //
-            $ deactivate 
+            $ deactivate
 
 
 
@@ -152,7 +156,7 @@ python3 Notes:
 
     // list all pip-installed packages
     $ pip freeze
-    
+
     //How do I list Python packages installed in my virtualenv?
     $ pip list --local
 
@@ -163,12 +167,13 @@ python3 Notes:
         (env) k:~/pythonDev$ pip list
         Package       Version
         ------------- -------
-        cffi          1.14.5 
-        pip           20.0.2 
-        pkg-resources 0.0.0  
-        pycparser     2.20   
-        setuptools    44.0.0 
-        six           1.16.0 
+        cffi          1.14.5
+        pip           20.0.2
+        pkg-resources 0.0.0
+        pycparser     2.20
+        setuptools    44.0.0
+        six           1.16.0
+
         (env) k:~/pythonDev$ pip freeze
         cffi==1.14.5
         pycparser==2.20
@@ -199,7 +204,7 @@ i believe that basically using a venv means that, while your using the venv that
 
     // activate the python venv
         $ source venv/bin/activate
-    
+
     // now you see the venv name at the start of the command line, so you know what venv you are in.
         (venv)...$
 
@@ -209,43 +214,336 @@ i believe that basically using a venv means that, while your using the venv that
     // deactivate venv.
         (venv)...$ deactivate
 
+
+
+scripts guards
+==============
+    When a python script is called like this ...
+        $ python myscript.py
+    then the variable __name__ will be equivalent to "__main__", else it will be myscript.
+        if __name__ == "__main__":
+    so, if you "import myscript" into another script then you will drop into the else clause
+
+
 ====================================================================================================================
 Git Notes:
-====================
-    *)
-    git submodule update --init --recursive 
+==========
+    *) Submodules:
+        // to work on the submodule you have to use the prefix submodule
+        e.g. $ git submodule status
 
-    *)
-    // clean ... more info on options
-        git clean -f -X -d
+        // when you are in the repo folder your actions will affect the submodule
+        //
 
-    *)
-    // todo git squash
+        // copied from https://faun.pub/git-submodule-cheatsheet-29a3bfe443c3
+        $ git submodule update --init --recursive
 
-    *)
-    
+
+        // Clone repo with submodules included
+        $ git clone <url> --recursive
+
+        // Create a submodule in a currently existing repo
+        $ git submodule add <url> <path>
+        $ git submodule update --init # Adding --recursive here will also update the submodule's submodule  if it exists
+        $ git commit -m 'Added new submodule <name> at <path>'
+
+
+        // Delete unused Submodule
+
+        Remove referencing lines in .gitmodules
+        Remove referencing lines in .git/config
+        $ rm -rf submodule-dir/
+        $ git add
+        $ git commit -m "removing submodule"
+
+        // Checkout a specific branch on submodule
+        $ git submodule update --remote
+
+
+        // aliasing examples...
+        $ git config alias.sdiff '!'"git diff && git submodule foreach 'git diff'"
+        $ git config alias.spush 'push --recurse-submodules=on-demand'
+        $ git config alias.supdate 'submodule update --remote --m
+
+    *) clean:
+        // clean ... more info on options
+        $ git clean --force -X -d
+
+            -d git clean will not recurse into untracked directories to avoid removing too much. Specify -d to have it recurse into such directories
+            -X    Remove only files ignored by Git. This may be useful to rebuild everything from scratch, but keep manually created files.
+
+
+    *) Squash:
+        // https://gist.github.com/patik/b8a9dc5cd356f9f6f980
+        // before you do this check state head, origin etc, you might have to do a git pull first, and a reset --hard, maybe..?
+        $ git reset --soft HEAD~3
+        $ git commit -m "New message for the combined commit"
+
+        // If the commits have been pushed to the remote:
+        // The plus sign forces the remote branch to accept your rewritten history, otherwise you will end up with divergent branches
+        $ git push origin +name-of-branch
+
+        // If the commits have NOT yet been pushed to the remote:
+        $ git push origin name-of-branch
+
+        note to get my changes upto github i had to use -f option, e.g. "git push -f origin main"
+
+    *) fork:
+        Fork in GitHub, clone your copy, commit changes. push to your GH repo.
+        to push back to the original repo, create pull request, others do merge, on you go...
+
+        Decided to use Github to fetch supstream ....
+            goto: https://github.com/manrussell/jt51-synth/tree/main
+            click on upstream then,
+            i think ...
+            1046  git checkout main
+            1047  git pull
+
+        keepsake from history, don't follow this verbatum just here for reference
+            1025  nano .git/config
+            1026  fg
+            1027  git log
+            1028  git checkout -b fork
+            1029  git branch -vv
+            1030  git push --set-upstream fork main
+            1031  git push -f --set-upstream fork main
+            1032  git branch -vv
+            1033  git push fork main
+            1034  git branch -vv
+            1035  git fetch
+            1036  git checkout main
+            1037  git stash
+            1038  git pull --rebase
+            1039  git checkout fork
+            1040  git rebase main
+            1041  git log
+            1042  git push fork main
+            1043  git status
+            1044  git pull fork main
+            1045  git log
+            1046  git checkout main
+            1047  git pull
+            1048  git log
+            1049  git status
+            1050  git checkout fork
+            1051  history
+
+====================================================================================================================
+VSCode Notes:
+=============
+    see launch.json
+        Python: Generate Gateware",
+        Python: generate verilog",
+        
+        This will launch into the open file "program": "${file}",
+
+    to run python
+        F5 -> enter to debug
+        shift F5 to close debug
+
+    *) extension
+    VSCode Windows Default Keybindings
 
 
 ====================================================================================================================
-Things i want to try
-====================
+simulating Notes:
+=================
+    run the test bench then view the results in gtkwave
+        gtkwave ctrl-drag to zoom,
+        left/right arrows to jump to the next event in the trace
+        to expand the traces you can copy/paste white lines below the signal name on the left/middle column
+
+    *)
+        $ echo "clean/reinitialise/start the venv"
+        $ cd gateware/
+        $ rm -rf venv/
+        $ ./initialize-python-environment.sh
+        $ source venv/bin/activate
+        $ echo "now run the test bench then view the results in gtkwave"
+        $ python3 test/fixedpointfirfilter-bench.py
+        $ gtkwave ./test/fixedpointfirfilter.gtkw &
+        $ deactivate
+
+    Also did...
+        *)
+        simulating the fractional-resampling
+            $ git clone https://github.com/hansfbaier/fractional-resampling-core.git
+            $ code fractional-resampling-core/
+
+            symbolic link to venv in other directory
+                $ ln -s ../jt51-synth/gateware/venv .
+                or alternatively
+                $ source ../jt51-synth/gateware/venv/bin/activate
+
+        *)
+            $ cd gateware/synthmodule-bench/
+
+====================================================================================================================
+verilator Notes:
+================
+    Verilator is a free and open-source software tool which converts Verilog to a cycle-accurate behavioral model in C++
+
+    $ cd gateware/synthmodule-bench/
+    $ sudo apt install verilator
+    $ ./verilate.sh
+
+    see top.v
+    /* Automatically generated by nMigen 0.3.dev255+ge974a31. Do not edit. */
+    /* Generated by Yosys 0.9+4052 (git sha1 32a0ce9d, clang 10.0.0-4ubuntu1 -fPIC -Os) */
+
+    Vivado/Quartus build scripts are written in tcl
+    build/top.tcl
+
+
+====================================================================================================================
+VGM/software folder Notes:
+==========================
+    For VGM player, sysex messages are piped in from a python script.
+
+    $ cd gateware/
+    $ cd ../software/
+    $ cd vgm-2151/
+        # run test bench
+    $ python3 vgm_dump.py
+    $ python3 vgm_dump.py test.vgz
+
+    you will get output like this ...
+        (7646)
+                => e2: FF    ENVELOPE ch2-op1: TOTAL LEVEL : 127
+        (21)
+                => ea: FF    ENVELOPE ch2-op3: TOTAL LEVEL : 127
+        (21)
+                => f2: FF    ENVELOPE ch2-op2: TOTAL LEVEL : 127
+        (21)
+                => fa: FF    ENVELOPE ch2-op4: TOTAL LEVEL : 127
+        (21)
+                => 08: 02    KEY SWITCH : CHANNEL 2: CARRIER1: OFF MODULATOR1: OFF CARRIER2: OFF MODULATOR2: OFF
+        (229)
+                => 08: 03    KEY SWITCH : CHANNEL 3: CARRIER1: OFF MODULATOR1: OFF CARRIER2: OFF MODULATOR2: OFF
+        (208)
+                => 08: 04    KEY SWITCH : CHANNEL 4: CARRIER1: OFF MODULATOR1: OFF CARRIER2: OFF MODULATOR2: OFF
+        (229)
+                => 08: 05    KEY SWITCH : CHANNEL 5: CARRIER1: OFF MODULATOR1: OFF CARRIER2: OFF MODULATOR2: OFF
+        (208)
+                => 08: 06    KEY SWITCH : CHANNEL 6: CARRIER1: OFF MODULATOR1: OFF CARRIER2: OFF MODULATOR2: OFF
+        (229)
+                => 08: 07    KEY SWITCH : CHANNEL 7: CARRIER1: OFF MODULATOR1: OFF CARRIER2: OFF MODULATOR2: OFF
+
+
+
+====================================================================================================================
+File types Notes:
+=================
+*.v     == verilog files
+*.gtkw  == gtkwave files
+*platfrom.py    == has defines for pins for that platform e.g. gateware/qmtech_ep4ce15_platform.py or, jt51platform.py for Xilinx Arty A7
+*-bench.py      == test benches
+
+
+
+====================================================================================================================
+Design/Architecture Overview Notes:
+===================================
+
+    luna usb midi core
+    -> midi controller
+    -> jt51
+    -> fir
+    -> resampler
+
+
+====================================================================================================================
+Overview Notes:
+===============
+
+jt51 - repo containing verilog core for the YM2151 (24 pin package) ?? and YM3012 D\A ??
+
+
+====================================================================================================================
+Clocks Notes:
+=============
+        m.domains.fast = ClockDomain()  # 100MHz, don't think this is used
+        m.domains.sync = ClockDomain()  #  50MHz
+        m.domains.usb  = ClockDomain()  #  60MHz
+        m.domains.jt51 = ClockDomain()  #  3.59 MHz MHz
+        m.domains.adat = ClockDomain()  #  3.584 MHz
+
+        # P_  for pll
+        # i_  for input
+        # o_  for output
+
+        # in pico seconds
+        # p_INCLK0_INPUT_FREQUENCY = 20000,   # 20 pico seconds == 50MHz, this is from the crystal
+
+        # locked, a signal to say that the pll's have locked the freq
+
+        # phase shift could be used to correct timing a bit, move forward or backward i think
+
+        m.submodules.mainpll = Instance("ALTPLL",
+            p_BANDWIDTH_TYPE         = "AUTO",
+            # 100MHz
+            p_CLK0_DIVIDE_BY         = 1,
+            p_CLK0_DUTY_CYCLE        = 50,
+            p_CLK0_MULTIPLY_BY       = 2,
+            p_CLK0_PHASE_SHIFT       = 0,
+            # 60MHz
+            p_CLK1_DIVIDE_BY         = 5,
+            p_CLK1_DUTY_CYCLE        = 50,
+            p_CLK1_MULTIPLY_BY       = 6,
+            p_CLK1_PHASE_SHIFT       = 0,
+
+            p_INCLK0_INPUT_FREQUENCY = 20000,
+            p_OPERATION_MODE         = "NORMAL",
+
+            # Drive our clock from the USB clock
+            # coming from the USB clock pin of the USB3300
+            i_inclk  = clk,
+            o_clk    = sys_clocks,
+            o_locked = sys_locked,
+        )
+
+
+
+
+
+
+====================================================================================================================
+build folder Notes:
+===================
+i think its just the output of verilator, so a bunch of verilog and Yosis, see top.v for a very long verilog page
+
+
+
+
+====================================================================================================================
+Utility objects Notes:
+======================
+    AsyncFIFO()  use this to change the clock domain speed, cross domain xxx. So it's a FIFO but you could have 60MHz going in and the 12MHz coming out.
+
+    pin matrix: e.g.  Resource("debug_led", 0, Pins("J_2:34", ...  maps board pins to FPGA pins for you. this will choose pin 34 from the J_2 header
+        see class QMTechEP4CE15Platform(IntelPlatform): in vemv/lib/nmigen
+
+
+====================================================================================================================
+Things i want to try:
+=====================
 
     *)
     Make my own repo with venv etc
         --done and made Notes
 
-    *)
+    *) done
     Git submodules tutorial
 
     *)
     just make anything in nmigen
 
-    *)
+    *) done
     simulate your thing
 
     *)
     make a blinky in nmigen for the Hw board.
 
-    *)
+    *) done
     fork Hans's repo
 

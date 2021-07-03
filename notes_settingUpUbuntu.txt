@@ -157,9 +157,17 @@ Tracktion, audio sequencer
     i put vst's into /usr/lib/vst
 
 
+Falstad circuit simulator
+==========================
+    https://www.falstad.com/circuit/offline/
+
 KiCad
 =====
     snap package
+
+splashtop-streamer
+==================
+
 
 ====
 
