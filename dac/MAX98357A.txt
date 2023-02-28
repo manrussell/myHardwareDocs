@@ -1,0 +1,34 @@
+Listen to this good news - we now have an all in one digital audio amp breakout board that works incredibly well with the Raspberry Pi! If you're looking for an easy and low cost way to get you digital sound files bumpin' then the MAX08357 I2S Amp Breakout is for you.
+
+It takes standard I2S digital audio input and, not only decodes it into analog, but also amplifies it directly into a speaker. Perfect for adding compact amplified sound, it takes 2 breakouts (I2S DAC + Amp) and combines them into one.
+
+I2S (not to be confused with I2C) in a digital sound protocol that is used on circuit boards to pass audio data around. Many high end chips and processors manage all of the audio in digital I2S format. Then, to input or output data, three or four pins are used (data in, data out, bit clock and left-right channel select). Usually, for audio devices, there's a DAC chip that will take I2S in and convert it to analog that can drive a headphone.
+
+This small mono amplifier is surprisingly powerful - able to deliver 3.2 Watts of power into a 4 ohm impedance speaker (5V power @ 10% THD). Inside the miniature chip is a class D controller, able to run from 2.7V-5.5VDC. Since the amp is a class D, it's incredibly efficient - making it perfect for portable and battery-powered projects. It has built in thermal and over-current protection but we could barely tell it got hot.
+
+The audio input is I2S standard, you can use 3.3V or 5V logic data. The outputs are "Bridge Tied" - that means they connect directly to the outputs, no connection to ground. The output is a ~300KHz square wave PWM that is then 'averaged out' by the speaker coil - the high frequencies are not heard. All the above means that you can't connect the output into another amplifier, it should drive the speakers directly.
+
+There's a Gain pin that can be manipulated to change the gain. By default, the amp will give you 9dB of gain. By connecting a pullup or pull down resistor, or wiring directly, the Gain pin can be set up to give 3dB, 6dB, 9dB, 12dB or 15dB.
+
+The ShutDown/Mode pin can be used to put the chip in shutdown or set up which I2S audio channel is piped to the speaker. By default, the amp will output (L+R)/2 stereo mix into mono out. By adding a resistor, you can change it to be just left or just right output
+
+Works great with Raspberry Pi, Arduino Zero, and any other microcontroller or microcomputer with I2S audio outputs
+
+Specs:
+
+    Output Power: 3.2W at 4Ω, 10% THD, 1.8W at 8Ω, 10% THD, with 5V supply
+    PSRR: 77 dB typ @ 1KHz
+    I2S sample rates from 8kHz to 96kHz
+    No MCLK required
+    Click + Pop reduction
+    Five pin-selectable gains: 3dB, 6dB, 9dB, 12dB, 15dB
+    Excellent click-and-pop suppression
+    Thermal shutdown protection
+
+Comes as an assembled and tested breakout board, with a small piece of optional header and 3.5mm terminal block. Some soldering is required to attach the header and terminal block if those are desired.   Check out the tutorial for schematics, diagrams, examples and more!
+
+TECHNICAL DETAILS
+
+    Product Dimensions: 19.4mm x 17.8mm x 3.0mm / 0.8" x 0.7" x 0.1"
+    Product Weight: 1.2g/0.0oz
+    MAX98357 Datasheet
